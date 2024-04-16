@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="https://kit.fontawesome.com/ef926559c6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#">
+            <i class="fas fa-home"></i> <!-- Home Icon -->
+            Home
+        </a>
+        <a href="#">
+            <i class="fas fa-book"></i> <!-- Log Icon -->
+            Log
+        </a>
+        <a href="#">
+            <i class="fas fa-volume-up"></i> <!-- Sounds Icon -->
+            Sounds
+        </a>
+        <a href="#">
+            <i class="fas fa-bell"></i> <!-- Reminders Icon -->
+            Reminders
+        </a>
+    </div>
+    
+    <!-- User Profile Dropdown -->
+    <div class="user-profile">
+        <i class="fas fa-user-circle" id="profile-icon"></i> <!-- User Profile Icon -->
+        <div class="dropdown-content" id="dropdown-content">
+            <a href="#">Home</a>
+            <a href="#">Profile</a>
+            <a href="#">Logout</a>
+        </div>
+    </div>
+
+    <!-- Sleep Tracking Circle -->
+    <div class="sleep-tracking-circle">
+        Start Sleep Tracking
+    </div>
+
+    <!-- Sleep Information Boxes -->
+    <div class="sleep-info">
+        <div class="current-night">
+            <h2>Current Night</h2>
+            <!-- Display current night sleep information here -->
+        </div>
+        <div class="previous-month">
+            <h2>Previous Month</h2>
+            <!-- Display previous month average sleep information here -->
+        </div>
+    </div>
+
+    <!-- JavaScript for Dropdown -->
+    <script>
+        document.getElementById("profile-icon").addEventListener("click", function() {
+            document.getElementById("dropdown-content").classList.toggle("show");
+        });
+        window.addEventListener("click", function(event) {
+            if (!event.target.matches("#profile-icon")) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains("show")) {
+                        openDropdown.classList.remove("show");
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
