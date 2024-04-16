@@ -8,24 +8,42 @@
 </head>
 <body>
     <div class="wrapper">
-        <form action="">
+        <form id="login" action="">
             
             <h1>Login</h1>
             <div class="input-box">
-                <input type="text" placeholder="Username"
-                required>
+                <input type="text" id="username" placeholder="Username" required>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="Password"
-                required>
+                <input type="password" id="password" placeholder="Password" required>
             </div>
             <div class="remember-forgot">
                 <label><input type="checkbox"> Remember me</label>
                 <a href="#"> Forgot password?</a>
             </div>
-            <button type="submit" class="btn1" required>Login</button>
-            <button type="submit" class="btn2" formnovalidate>Sign Up</button>
+
+            <button type="submit" class="btn1">Login</button>
+            <a class="btn2" href="createaccount.html">Sign Up</a>
         </form>
+
+        <script>
+            document.getElementById("login").addEventListener("submit", function(event) {
+                event.preventDefault();
+    
+                // Retrieve form inputs
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+    
+                // Check if any field is empty
+                if (username.trim() === "" || password.trim() === "") {
+                    alert("Please fill in all fields.");
+                    return;
+                }
+    
+                // If all validations pass, redirect to the next page
+                window.location.href = "home.html";
+            });
+        </script>
     </div>    
 </body>
 </html>
