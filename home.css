@@ -1,0 +1,47 @@
+/* make nav bar a little bit longer */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: #1f2d28;
+    background-size: cover;
+    background-position: center;
+}
+
+#bottom-navbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #9dcfa4;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav-item {
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+    flex-grow: 1;
+    padding: 10px;
+    transition: background-color 0.3s;
+        
+}
+
+.active {
+    background-color: #89b683;
+        
+}
+
+/* Additional styles for page content */
+.page-content {
+    padding-bottom: 0px; /* Adjust according to the height of the navbar */
+}

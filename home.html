@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div id="bottom-navbar">
+            <a href="#" class="nav-item active" id="home">Home</a>
+            <a href="#" class="nav-item" id="log">Log</a>
+            <a href="#" class="nav-item" id="sounds">Sounds</a>
+            <a href="#" class="nav-item" id="reminders">Reminders</a>
+        </div>
+    
+        <script>
+            // JavaScript to handle navigation functionality
+            document.addEventListener("DOMContentLoaded", function() {
+                const navItems = document.querySelectorAll('.nav-item');
+    
+                navItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        // Remove 'active' class from all items
+                        navItems.forEach(item => {
+                            item.classList.remove('active');
+                        });
+                        // Add 'active' class to the clicked item
+                        this.classList.add('active');
+                    });
+                });
+            });
+        </script>
+    </div>    
+</body>
+</html>
