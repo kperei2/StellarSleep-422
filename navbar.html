@@ -1,0 +1,38 @@
+<!-- change file name pls -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAV BAR EXAMPLE</title>
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    <div class="wrapper">
+        <script src="https://kit.fontawesome.com/4f8ff236c5.js" crossorigin="anonymous"></script>
+        <div id="bottom-navbar">
+            <a href="#" class="nav-item active" id="home"><i class="fa fa-fw fa-home"></i></a>
+            <a href="#" class="nav-item" id="log"><i class="fa fa-fw fa-clipboard-list"></i></a>
+            <a href="#" class="nav-item" id="sounds"><i class="fa fa-fw fa-headphones"></i></a>
+            <a href="#" class="nav-item" id="reminders"><i class="fa fa-fw fa-bell"></i></a>
+        </div>
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const navItems = document.querySelectorAll('.nav-item');
+    
+                navItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        navItems.forEach(item => {
+                            item.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    });
+                });
+            });
+        </script>
+    </div>    
+</body>
+</html>
