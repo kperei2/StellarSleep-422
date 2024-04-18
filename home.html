@@ -4,72 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="navbar.css"> <!-- Link to the new navbar CSS -->
+    <link rel="stylesheet" href="home.css"> <!-- Link to the existing home CSS -->
     <script src="https://kit.fontawesome.com/ef926559c6.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Navigation Bar -->
-    <div class="navbar">
-        <a href="#">
-            <i class="fas fa-home"></i> <!-- Home Icon -->
-            Home
-        </a>
-        <a href="#">
-            <i class="fas fa-book"></i> <!-- Log Icon -->
-            Log
-        </a>
-        <a href="#">
-            <i class="fas fa-volume-up"></i> <!-- Sounds Icon -->
-            Sounds
-        </a>
-        <a href="#">
-            <i class="fas fa-bell"></i> <!-- Reminders Icon -->
-            Reminders
-        </a>
-    </div>
-    
-    <!-- User Profile Dropdown -->
-    <div class="user-profile">
-        <i class="fas fa-user-circle" id="profile-icon"></i> <!-- User Profile Icon -->
-        <div class="dropdown-content" id="dropdown-content">
-            <a href="#">Home</a>
-            <a href="#">Profile</a>
-            <a href="#">Logout</a>
+    <div class="wrapper">
+        <div id="bottom-navbar">
+            <a href="#" class="nav-item active" id="home"><i class="fas fa-home"></i></a>
+            <a href="#" class="nav-item" id="log"><i class="fas fa-book"></i></a>
+            <a href="#" class="nav-item" id="sounds"><i class="fas fa-volume-up"></i></a>
+            <a href="#" class="nav-item" id="reminders"><i class="fas fa-bell"></i></a>
+        </div>
+
+        <!-- Sleep Tracking Circle -->
+        <div class="sleep-tracking-circle" id="sleep-tracking-circle">
+            <div id="timer" style="display: none;">
+                <p id="timer-text">Now tracking sleep...</p>
+                <p id="timer-countdown">00:00:00</p>
+            </div>
+            Start Sleep Tracking
+        </div>
+
+        <!-- Sleep Information Boxes -->
+        <div class="sleep-info">
+            <div class="current-night">
+                <h2>Current Night</h2>
+                <!-- Display current night sleep information here -->
+            </div>
+            <div class="previous-month">
+                <h2>Previous Month</h2>
+                <!-- Display previous month average sleep information here -->
+            </div>
         </div>
     </div>
 
-    <!-- Sleep Tracking Circle -->
-    <div class="sleep-tracking-circle">
-        Start Sleep Tracking
-    </div>
-
-    <!-- Sleep Information Boxes -->
-    <div class="sleep-info">
-        <div class="current-night">
-            <h2>Current Night</h2>
-            <!-- Display current night sleep information here -->
-        </div>
-        <div class="previous-month">
-            <h2>Previous Month</h2>
-            <!-- Display previous month average sleep information here -->
-        </div>
-    </div>
-
-    <!-- JavaScript for Dropdown -->
+    <!-- JavaScript for Navbar and Sleep Tracking -->
     <script>
-        document.getElementById("profile-icon").addEventListener("click", function() {
-            document.getElementById("dropdown-content").classList.toggle("show");
-        });
-        window.addEventListener("click", function(event) {
-            if (!event.target.matches("#profile-icon")) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains("show")) {
-                        openDropdown.classList.remove("show");
-                    }
+        document.addEventListener("DOMContentLoaded", function() {
+            const navItems = document.querySelectorAll('.nav-item');
+            const sleepTrackingCircle = document.getElementById('sleep-tracking-circle');
+            const timer = document.getElementById('timer');
+            const timerText = document.getElementById('timer-text');
+            const timerCountdown = document.getElementById('timer-countdown');
+
+            let isTracking = false;
+            let startTime;
+
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    navItems.forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+
+            sleepTrackingCircle.addEventListener('click', function() {
+                if (!isTracking) {
+                    startTime = Date.now();
+                    timer.style.display = 'block';
+                    timerText.innerText = 'Now tracking sleep...';
+                    updateTimer();
+                } else {
+                    timer.style.display = 'none';
+                    clearInterval(intervalId);
                 }
+                isTracking = !isTracking;
+            });
+
+            let intervalId;
+            function updateTimer() {
+                intervalId = setInterval(function() {
+                    const elapsedTime = Date.now() - startTime;
+                    const hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+                    const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+                    timerCountdown.innerText = `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
+                }, 1000);
+            }
+
+            function formatTime(time) {
+                return time < 10 ? `0${time}` : time;
             }
         });
     </script>
