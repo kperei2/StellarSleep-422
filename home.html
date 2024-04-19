@@ -27,9 +27,9 @@
         <div class="profile-icon" id="profile-icon">
             <i class="fas fa-user"></i>
             <div class="dropdown-content" id="profile-dropdown">
-                <a href="#">Profile</a>
-                <a href="#">Settings</a>
-                <a href="#">Logout</a>
+                <a href="#" id="profile-option">Profile</a>
+                <a href="#" id="logs-option">Logs</a>
+                <a href="#" id="logout-option">Logout</a>
             </div>
         </div>
 
@@ -59,7 +59,7 @@
                 <div class="sleep-info-details">
                     <p>Avg Hours Slept: 6.5</p>
                     <p>Total Sleep Interruptions: 13</p>
-                    <p>Average Bedtime: 10:30 PM</p>
+                    <p>Average Bedtime: 10:34 PM</p>
                 </div>
             </div>
         </div>
@@ -70,8 +70,12 @@
         document.addEventListener("DOMContentLoaded", function() {
             const profileIcon = document.getElementById('profile-icon');
             const profileDropdown = document.getElementById('profile-dropdown');
+            const profileOption = document.getElementById('profile-option');
+            const logsOption = document.getElementById('logs-option');
+            const logoutOption = document.getElementById('logout-option');
 
-            profileIcon.addEventListener('click', function() {
+            profileIcon.addEventListener('click', function(event) {
+                event.stopPropagation();
                 profileIcon.classList.toggle('active');
             });
 
@@ -83,47 +87,20 @@
                 profileIcon.classList.remove('active');
             });
 
-            const sleepTrackingCircle = document.getElementById('sleep-tracking-circle');
-            const trackingStatus = document.querySelector('.tracking-status');
-            const timer = document.getElementById('timer');
-            const playIcon = document.querySelector('.fa-play');
-            const pauseIcon = document.createElement('i');
-            pauseIcon.classList.add('fas', 'fa-pause');
-            let isTracking = false;
-            let startTime;
-
-            sleepTrackingCircle.addEventListener('click', function() {
-                if (!isTracking) {
-                    startTime = Date.now();
-                    timer.style.display = 'block';
-                    updateTimer();
-                    sleepTrackingCircle.querySelector('.icon-wrapper').removeChild(playIcon);
-                    sleepTrackingCircle.querySelector('.icon-wrapper').appendChild(pauseIcon); 
-                    trackingStatus.innerText = 'Stop Sleep Tracking'; 
-                } else {
-                    timer.style.display = 'none';
-                    clearInterval(intervalId);
-                    sleepTrackingCircle.querySelector('.icon-wrapper').removeChild(pauseIcon); 
-                    sleepTrackingCircle.querySelector('.icon-wrapper').appendChild(playIcon); 
-                    trackingStatus.innerText = 'Start Sleep Tracking'; 
-                }
-                isTracking = !isTracking;
+            profileOption.addEventListener('click', function(event) {
+                event.preventDefault();
+                console.log("Profile option clicked");
             });
 
-            let intervalId;
-            function updateTimer() {
-                intervalId = setInterval(function() {
-                    const elapsedTime = Date.now() - startTime;
-                    const hours = Math.floor(elapsedTime / (1000 * 60 * 60));
-                    const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
-                    document.getElementById('timer-countdown').innerText = `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
-                }, 1000);
-            }
+            logsOption.addEventListener('click', function(event) {
+                event.preventDefault();
+                console.log("Logs option clicked");
+            });
 
-            function formatTime(time) {
-                return time < 10 ? `0${time}` : time;
-            }
+            logoutOption.addEventListener('click', function(event) {
+                event.preventDefault();
+                console.log("Logout option clicked");
+            });
         });
     </script>
 </body>

@@ -1,5 +1,3 @@
-/* Full home.css */
-
 body, h1, h2, h3, p, a {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -22,8 +20,12 @@ body {
     justify-content: space-around;
     align-items: center;
     background-color: #1f2d28;
-    border-bottom: 2px solid #a3d1ae;
+    border-top: 2px solid #a3d1ae;
     height: 60px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000; 
 }
 
 .nav-item {
@@ -55,9 +57,9 @@ body {
     right: 20px;
     width: 40px;
     height: 40px;
-    border: 2px solid #a3d1ae; 
+    border: 2px solid #a3d1ae;
     border-radius: 50%; 
-    background-color: #1f2d28; 
+    background-color: #1f2d28; /
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,7 +82,7 @@ body {
     border-radius: 10px;
     overflow: hidden;
     right: 0;
-    top: 60px;
+    top: 60px; 
 }
 
 .profile-icon .dropdown-content a {
@@ -102,7 +104,7 @@ body {
 /* Sleep Tracking Circle styles */
 .sleep-tracking-circle {
     position: absolute;
-    top: 130px;
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
     width: 300px;
@@ -118,18 +120,18 @@ body {
     color: #a3d1ae;
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
-    box-sizing: border-box;
+    z-index: 1;
 }
 
 .sleep-tracking-circle .icon-wrapper {
     position: absolute;
-    bottom: 20px; 
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .sleep-tracking-circle:hover {
-    background-color: #a3d1ae; 
+    background-color: #a3d1ae;
     color: #1f2d28; 
 }
 
@@ -156,26 +158,51 @@ body {
 .sleep-info {
     display: flex;
     justify-content: space-between; 
-    align-items: flex-start;/
+    align-items: flex-start;
     position: absolute;
-    top: calc(55% + 10px); 
+    top: calc(30% + 100px);
     left: 50%;
     transform: translateX(-50%);
-    width: 90%; 
+    width: 90%;
+    max-width: 800px;
+    margin-top: 20px; 
+    z-index: 0; 
 }
 
-.sleep-info .current-night,
-.sleep-info .previous-month {
-    width: 45%;
-    height: 300px;
+.sleep-info .previous-month,
+.sleep-info .current-night {
+    width: calc(50% - 20px);
+    max-width: 350px;
     padding: 20px;
-    background-color: #1f2d28; 
+    background-color: #1f2d28;
     border: 2px solid #a3d1ae;
     border-radius: 10px;
     text-align: center;
-    color: #a3d1ae; 
+    color: #a3d1ae;
+    margin-top: 25px;
+}
+
+.sleep-info .previous-month {
+    margin-bottom: 50px;
 }
 
 .sleep-info .sleep-info-details {
-    margin-top: 20px; 
+    margin-top: 20px;
+}
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 600px) {
+    .sleep-info {
+        flex-direction: column;
+        top: calc(30% + 100px);
+    }
+
+    .sleep-info .previous-month,
+    .sleep-info .current-night, .sleep-info {
+        width: calc(100% - 40px);
+    }
+
+    #bottom-navbar{
+        height: 40px;
+    }
 }
