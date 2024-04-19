@@ -1,0 +1,128 @@
+<html>
+
+<head>
+    <title>Reminders</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="reminders.css">
+    <script src="reminders.js"></script>
+</head>
+
+<body onload="startTime()">
+    <div class="top-section">
+        <h1>
+            Reminders
+        </h1>
+        <div id="clock"></div>
+    </div>
+        <script src="https://kit.fontawesome.com/4f8ff236c5.js" crossorigin="anonymous"></script>
+        <div id="bottom-navbar">
+            <a href="#" class="nav-item active" id="home"><i class="fa fa-fw fa-home"></i></a>
+            <a href="#" class="nav-item" id="log"><i class="fa fa-fw fa-clipboard-list"></i></a>
+            <a href="#" class="nav-item" id="sounds"><i class="fa fa-fw fa-headphones"></i></a>
+            <a href="#" class="nav-item" id="reminders"><i class="fa fa-fw fa-bell"></i></a>
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const navItems = document.querySelectorAll('.nav-item');
+    
+                navItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        navItems.forEach(item => {
+                            item.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    });
+                });
+            });
+        </script>
+    </div>    
+    <div class="wrapper">
+        <div class="alarmset">
+            <p class="time">08:16</p>
+            <div class="day-set">
+                <input type="checkbox" id="Sunday1" /><label for="Sunday1">S  </label>
+                ​<input type="checkbox" id="Monday1" /><label for="Monday1">M  </label>
+                ​<input type="checkbox" id="Tuesday1" /><label for="Tuesday1">T  </label>
+                ​<input type="checkbox" id="Wednesday1" /><label for="Wednesday1">W  </label>
+                ​<input type="checkbox" id="Thursday1" /><label for="Thursday1">T  </label>
+                ​<input type="checkbox" id="Friday1" /><label for="Friday1">F  </label>
+                ​<input type="checkbox" id="Saturday1" /><label for="Saturday1">S</label>
+            </div>
+            <label class="toggle">
+                    <input type="checkbox">
+                    <div class="slide-toggle"></div>
+                </label>
+        </div>
+        <div class="alarmset">
+            <p class="time">08:18</p>
+            <div class="day-set">
+                <input type="checkbox" id="Sunday2" /><label for="Sunday2">S  </label>
+                ​<input type="checkbox" id="Monday2" /><label for="Monday2">M  </label>
+                ​<input type="checkbox" id="Tuesday2" /><label for="Tuesday2">T  </label>
+                ​<input type="checkbox" id="Wednesday2" /><label for="Wednesday2">W  </label>
+                ​<input type="checkbox" id="Thursday2" /><label for="Thursday2">T  </label>
+                ​<input type="checkbox" id="Friday2" /><label for="Friday2">F  </label>
+                ​<input type="checkbox" id="Saturday2" /><label for="Saturday2">S</label>
+            </div>
+            <label class="toggle">
+                    <input type="checkbox">
+                    <div class="slide-toggle"></div>
+                </label>
+        </div>
+        <div class="alarmset">
+            <p class="time">08:22</p>
+            <div class="day-set">
+                <input type="checkbox" id="Sunday3" /><label for="Sunday3">S  </label>
+                ​<input type="checkbox" id="Monday3" /><label for="Monday3">M  </label>
+                ​<input type="checkbox" id="Tuesday3" /><label for="Tuesday3">T  </label>
+                ​<input type="checkbox" id="Wednesday3" /><label for="Wednesday3">W  </label>
+                ​<input type="checkbox" id="Thursday3" /><label for="Thursday3">T  </label>
+                ​<input type="checkbox" id="Friday3" /><label for="Friday3">F  </label>
+                ​<input type="checkbox" id="Saturday3" /><label for="Saturday3">S</label>
+            </div>
+            <label class="toggle">
+                    <input type="checkbox">
+                    <div class="slide-toggle"></div>
+                </label>
+        </div>
+        <div class="alarmset">
+            <p class="time">08:24</p>
+            <div class="day-set">
+                <input type="checkbox" id="Sunday4" /><label for="Sunday4">S  </label>
+                ​<input type="checkbox" id="Monday4" /><label for="Monday4">M  </label>
+                ​<input type="checkbox" id="Tuesday4" /><label for="Tuesday4">T  </label>
+                ​<input type="checkbox" id="Wednesday4" /><label for="Wednesday4">W  </label>
+                ​<input type="checkbox" id="Thursday4" /><label for="Thursday4">T  </label>
+                ​<input type="checkbox" id="Friday4" /><label for="Friday4">F  </label>
+                ​<input type="checkbox" id="Saturday4" /><label for="Saturday4">S</label>
+            </div>
+            <label class="toggle">
+                    <input type="checkbox">
+                    <div class="slide-toggle"></div>
+                </label>
+        </div>
+        <div class="alarmset">
+            <p class="time">09:00</p>
+            <div class="day-set">
+                <input type="checkbox" id="Sunday" /><label for="Sunday">S  </label>
+                ​<input type="checkbox" id="Monday" /><label for="Monday">M  </label>
+                ​<input type="checkbox" id="Tuesday" /><label for="Tuesday">T  </label>
+                ​<input type="checkbox" id="Wednesday" /><label for="Wednesday">W  </label>
+                ​<input type="checkbox" id="Thursday" /><label for="Thursday">T  </label>
+                ​<input type="checkbox" id="Friday" /><label for="Friday">F  </label>
+                ​<input type="checkbox" id="Saturday" /><label for="Saturday">S</label>
+            </div>
+            <label class="toggle">
+                    <input type="checkbox">
+                    <div class="slide-toggle"></div>
+                </label>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>
+
+​<input type="checkbox" id="test" /><label for="test">Click to check</label>
