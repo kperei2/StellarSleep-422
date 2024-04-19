@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="navbar.css"> <!-- Link to the new navbar CSS -->
-    <link rel="stylesheet" href="home.css"> <!-- Link to the existing home CSS -->
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="home.css">
     <script src="https://kit.fontawesome.com/ef926559c6.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -18,24 +18,49 @@
             <a href="#" class="nav-item" id="reminders"><i class="fas fa-bell"></i></a>
         </div>
 
+        <!-- Logo -->
+        <div class="logo">
+            <img src="stellarsleeplogo.png" alt="Stellar Sleep Logo">
+        </div>
+
+        <!-- Profile Icon -->
+        <div class="profile-icon" id="profile-icon">
+            <i class="fas fa-user"></i>
+            <div class="dropdown-content" id="profile-dropdown">
+                <a href="#">Profile</a>
+                <a href="#">Settings</a>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+
         <!-- Sleep Tracking Circle -->
         <div class="sleep-tracking-circle" id="sleep-tracking-circle">
+            <span class="tracking-status">Start Sleep Tracking</span>
             <div id="timer" style="display: none;">
-                <p id="timer-text">Now tracking sleep...</p>
                 <p id="timer-countdown">00:00:00</p>
             </div>
-            Start Sleep Tracking
+            <div class="icon-wrapper">
+                <i class="fas fa-play"></i>
+            </div>
         </div>
 
         <!-- Sleep Information Boxes -->
         <div class="sleep-info">
             <div class="current-night">
-                <h2>Current Night</h2>
-                <!-- Display current night sleep information here -->
+                <h2>Last Night</h2>
+                <div class="sleep-info-details">
+                    <p>Avg Hours Slept: 7</p>
+                    <p>Sleep Interruptions: 2</p>
+                    <p>Time Went to Sleep: 11:00 PM</p>
+                </div>
             </div>
             <div class="previous-month">
                 <h2>Previous Month</h2>
-                <!-- Display previous month average sleep information here -->
+                <div class="sleep-info-details">
+                    <p>Avg Hours Slept: 6.5</p>
+                    <p>Sleep Interruptions: 13</p>
+                    <p>Time Went to Sleep: 10:30 PM</p>
+                </div>
             </div>
         </div>
     </div>
@@ -43,33 +68,44 @@
     <!-- JavaScript for Navbar and Sleep Tracking -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const navItems = document.querySelectorAll('.nav-item');
-            const sleepTrackingCircle = document.getElementById('sleep-tracking-circle');
-            const timer = document.getElementById('timer');
-            const timerText = document.getElementById('timer-text');
-            const timerCountdown = document.getElementById('timer-countdown');
+            const profileIcon = document.getElementById('profile-icon');
+            const profileDropdown = document.getElementById('profile-dropdown');
 
+            profileIcon.addEventListener('click', function() {
+                profileIcon.classList.toggle('active');
+            });
+
+            profileDropdown.addEventListener('click', function(event) {
+                event.stopPropagation();
+            });
+
+            document.addEventListener('click', function() {
+                profileIcon.classList.remove('active');
+            });
+
+            const sleepTrackingCircle = document.getElementById('sleep-tracking-circle');
+            const trackingStatus = document.querySelector('.tracking-status');
+            const timer = document.getElementById('timer');
+            const playIcon = document.querySelector('.fa-play');
+            const pauseIcon = document.createElement('i');
+            pauseIcon.classList.add('fas', 'fa-pause');
             let isTracking = false;
             let startTime;
-
-            navItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    navItems.forEach(item => {
-                        item.classList.remove('active');
-                    });
-                    this.classList.add('active');
-                });
-            });
 
             sleepTrackingCircle.addEventListener('click', function() {
                 if (!isTracking) {
                     startTime = Date.now();
                     timer.style.display = 'block';
-                    timerText.innerText = 'Now tracking sleep...';
                     updateTimer();
+                    sleepTrackingCircle.querySelector('.icon-wrapper').removeChild(playIcon);
+                    sleepTrackingCircle.querySelector('.icon-wrapper').appendChild(pauseIcon); 
+                    trackingStatus.innerText = 'Stop Sleep Tracking'; 
                 } else {
                     timer.style.display = 'none';
                     clearInterval(intervalId);
+                    sleepTrackingCircle.querySelector('.icon-wrapper').removeChild(pauseIcon); 
+                    sleepTrackingCircle.querySelector('.icon-wrapper').appendChild(playIcon); 
+                    trackingStatus.innerText = 'Start Sleep Tracking'; 
                 }
                 isTracking = !isTracking;
             });
@@ -81,7 +117,7 @@
                     const hours = Math.floor(elapsedTime / (1000 * 60 * 60));
                     const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
                     const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
-                    timerCountdown.innerText = `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
+                    document.getElementById('timer-countdown').innerText = `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
                 }, 1000);
             }
 
