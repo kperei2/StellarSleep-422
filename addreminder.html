@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Add Reminder</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="reminders.js"></script>
+        <link rel="stylesheet" href="addreminder.css">
+        <script src="reminders.js"></script>
+    </head>
+
+    <body onload="startTime()">
+        <!-- Profile Icon -->
+    <div class="profile-icon" id="profile-icon">
+        <i class="fas fa-user"></i>
+            <div class="dropdown-content" id="profile-dropdown">
+                <a href="#" id="profile-option">Profile</a>
+                <a href="#" id="logs-option">Logs</a>
+                <a href="#" id="logout-option">Logout</a>
+            </div>
+    </div>
+        <div class="top-section">
+            <h1>
+                Add Reminder
+            </h1>
+            <div id="clock"></div>
+        </div>
+        <script src="https://kit.fontawesome.com/4f8ff236c5.js" crossorigin="anonymous"></script>
+        <div id="bottom-navbar">
+            <a href="#" class="nav-item active" id="home"><i class="fa fa-fw fa-home"></i></a>
+            <a href="#" class="nav-item" id="log"><i class="fa fa-fw fa-clipboard-list"></i></a>
+            <a href="#" class="nav-item" id="sounds"><i class="fa fa-fw fa-headphones"></i></a>
+            <a href="#" class="nav-item" id="reminders"><i class="fa fa-fw fa-bell"></i></a>
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const navItems = document.querySelectorAll('.nav-item');
+    
+                navItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        navItems.forEach(item => {
+                            item.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    });
+                });
+            });
+        </script>
+        </div>
+        <div class="input-body">
+            <div class="input-selection">
+                <label for="hour">Hour</label>
+                <input type="number" id="hour" name="hour" min="0" max="23" />
+            </div>
+         <div class="input-selection">
+            <label for="minute">Minute</label>
+            <input type="number" id="minute" name="minute" min="0" max="59" />
+         </div>
+         
+        </div>
+            <button id="setReminder" type="button" onclick="addAlarm()">
+                Set Reminder
+            </button>
+    </body>
+</html>

@@ -31,6 +31,14 @@ body {
         text-align: center;
     }
 }
+
+.switch-section {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+
 #clock {
     text-align: center;
     margin-bottom: 50px;
@@ -171,3 +179,73 @@ input[type=checkbox]:checked + label {
 
 
 
+/* Profile Icon */
+.profile-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #a3d1ae;
+    border-radius: 50%; 
+    background-color: #1f2d28; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile-icon i {
+    color: #a3d1ae;
+    font-size: 24px;
+}
+
+/* Dropdown Content for Profile Icon */
+.profile-icon .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #9dcfa4;
+    min-width: 120px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    right: 0;
+    top: 60px; 
+}
+
+.profile-icon .dropdown-content a {
+    color: white; 
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 10px; 
+}
+
+.profile-icon .dropdown-content a:hover {
+    background-color: #7ba683; 
+}
+
+.profile-icon.active .dropdown-content {
+    display: block;
+}
+
+#addReminderSwitch {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #9dcfa4;
+    min-width: 100px;
+    min-height: 50px;
+    font-size: large;
+    font-family: bold;
+    border-radius: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+#addReminderSwitch i {
+    font-size: 24px;
+}
+#addReminderSwitch:hover {
+    background-color: #89b683;
+}

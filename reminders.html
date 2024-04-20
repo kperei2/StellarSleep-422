@@ -9,12 +9,26 @@
 </head>
 
 <body onload="startTime()">
+    <!-- Profile Icon -->
+    <div class="profile-icon" id="profile-icon">
+        <i class="fas fa-user"></i>
+            <div class="dropdown-content" id="profile-dropdown">
+                <a href="#" id="profile-option">Profile</a>
+                <a href="#" id="logs-option">Logs</a>
+                <a href="#" id="logout-option">Logout</a>
+            </div>
+    </div>
+
+
     <div class="top-section">
         <h1>
             Reminders
         </h1>
+        <!-- live clock -->
         <div id="clock"></div>
     </div>
+
+    <!-- bottom bar -->
         <script src="https://kit.fontawesome.com/4f8ff236c5.js" crossorigin="anonymous"></script>
         <div id="bottom-navbar">
             <a href="#" class="nav-item active" id="home"><i class="fa fa-fw fa-home"></i></a>
@@ -38,8 +52,18 @@
         </script>
     </div>    
     <div class="wrapper">
+
+        <!-- add reminder button -->
+        <div class="switch-section">
+            <button id="addReminderSwitch" type="button" onClick="window.location.href='addreminder.html';">
+                <i class="fa-regular fa-bell"></i>
+                Add Reminder
+            </button>
+        </div>
+
+        <!-- set of alarms -->
         <div class="alarmset">
-            <p class="time">08:16</p>
+            <p id ="alarm1"class="time"></p>
             <div class="day-set">
                 <input type="checkbox" id="Sunday1" /><label for="Sunday1">S  </label>
                 ​<input type="checkbox" id="Monday1" /><label for="Monday1">M  </label>
@@ -55,7 +79,7 @@
                 </label>
         </div>
         <div class="alarmset">
-            <p class="time">08:18</p>
+            <p class="time">8:18 pm</p>
             <div class="day-set">
                 <input type="checkbox" id="Sunday2" /><label for="Sunday2">S  </label>
                 ​<input type="checkbox" id="Monday2" /><label for="Monday2">M  </label>
@@ -71,7 +95,7 @@
                 </label>
         </div>
         <div class="alarmset">
-            <p class="time">08:22</p>
+            <p class="time">8:22 pm</p>
             <div class="day-set">
                 <input type="checkbox" id="Sunday3" /><label for="Sunday3">S  </label>
                 ​<input type="checkbox" id="Monday3" /><label for="Monday3">M  </label>
@@ -87,7 +111,7 @@
                 </label>
         </div>
         <div class="alarmset">
-            <p class="time">08:24</p>
+            <p class="time">8:24 pm</p>
             <div class="day-set">
                 <input type="checkbox" id="Sunday4" /><label for="Sunday4">S  </label>
                 ​<input type="checkbox" id="Monday4" /><label for="Monday4">M  </label>
@@ -103,7 +127,7 @@
                 </label>
         </div>
         <div class="alarmset">
-            <p class="time">09:00</p>
+            <p class="time">9:00 pm</p>
             <div class="day-set">
                 <input type="checkbox" id="Sunday" /><label for="Sunday">S  </label>
                 ​<input type="checkbox" id="Monday" /><label for="Monday">M  </label>
@@ -119,10 +143,7 @@
                 </label>
         </div>
     </div>
-
     
 </body>
 
 </html>
-
-​<input type="checkbox" id="test" /><label for="test">Click to check</label>
