@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 .sleep-logs {
     display: flex;
     justify-content: space-between; 
@@ -253,8 +254,93 @@ body {
     .sleep-logs .sleep-log, .sleep-info .last-log{
         width: calc(100% - 80px);
     }
+
+    .wrapper{
+        width: 80%;
+        align-items: center;
+    }
     
     #bottom-navbar{
         height: 40px;
     }
+}
+.input-box > h4 {
+    font-size: 18px;
+    color: #9dcfa4;
+    text-align: center;
+    float: left;
+}
+
+.wrapper h1{
+    font-size: 36px;
+    text-align: center;
+    color: #9dcfa4;
+}
+
+.wrapper .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 13px;
+    font-size: 16px;
+    color: white;
+    padding: 20px 45px 20px 20px;
+}
+    
+.wrapper .btn{
+    text-align: center;
+    width: 100%;
+    height: 45px;
+    background: #769b7b;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid #9dcfa4;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    margin-top: 20px;    
+}
+
+.wrapper .btn2{
+    text-align: center;
+    width: 100%;
+    height: 45px;
+    background: #d94100;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid #f14800;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    margin-top: 20px;    
+}
+
+
+.btn {
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 15px 0 rgba(0,0,0,0.19);
+} 
+.btn2 {
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 15px 0 rgba(0,0,0,0.19);
+} 
+
+#active {
+    display:flex;
+}
+
+#createLog {
+    display:none;
 }
