@@ -12,7 +12,7 @@
     position: absolute;
     top: calc(20% + 10px);
     left: 50%;
-    transform: translateX(-41%);
+    transform: translateX(-38%);
     width: 90%;
     max-width: 800px;
     margin-top: 10px; 
@@ -22,7 +22,7 @@
 
 .sleep-logs .sleep-log {
     width: calc(80% - 20px);
-    max-width: 850px;
+    max-width: 800px;
     padding: 20px;
     background-color: #1f2d28;
     border: 2px solid #a3d1ae;
@@ -34,7 +34,7 @@
 
 .sleep-logs .last-log {
     width: calc(80% - 20px);
-    max-width: 850px;
+    max-width: 800px;
     padding: 20px;
     background-color: #1f2d28;
     border: 2px solid #a3d1ae;

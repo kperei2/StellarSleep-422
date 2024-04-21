@@ -25,125 +25,115 @@
                 <a href="#" id="logout-option">Logout</a>
             </div>
         </div>
-
+        <!-- Active Div -->
         <div id="active">
-        <div class="add-entry">
-            <div class="add-button" id="addbtn">
-                <i class="fa-solid fa-plus"></i>
+            <!-- Add Entry Button -->
+            <div class="add-entry">
+                <div class="add-button" id="addbtn">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="add-entry-text">Add Entry</div>
             </div>
-            <div class="add-entry-text">Add Entry</div>
-        </div>
 
-        <!-- Sleep Information Boxes -->
-        <div class="sleep-logs" id="sleep-logs">
-            <div class="sleep-log">
-                <h2>Sleep Log #1</h2>
-                <hr class="solid">
-                <div class="sleep-log-details">
-                    <p><b><u>Date:</u></b> 12/23/2023</p>
-                    <p><b><u>Hours Slept:</u></b> 8</p>
-                    <p><b><u>Notes:</u></b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor cursus consequat. Nam eget commodo enim. Morbi sodales dapibus lobortis. Morbi tristique dui vel libero aliquet, id cursus lacus mollis. Mauris ut eros nec dui ornare dapibus.</p>
+            <!-- Sleep Information Boxes -->
+            <div class="sleep-logs" id="sleep-logs">
+                <div class="sleep-log">
+                    <h2>Sleep Log #1</h2>
+                    <hr class="solid">
+                    <div class="sleep-log-details">
+                        <p><b><u>Date:</u></b> 12/23/2023</p>
+                        <p><b><u>Hours Slept:</u></b> 8</p>
+                        <p><b><u>Notes:</u></b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor cursus consequat. Nam eget commodo enim. Morbi sodales dapibus lobortis. Morbi tristique dui vel libero aliquet, id cursus lacus mollis. Mauris ut eros nec dui ornare dapibus.</p>
+                    </div>
+                    <div class="sleep-log-trash" id="trash-icon"><i class="fa-solid fa-trash" onclick="{rem(this);}"></i></div>
+                    
                 </div>
-                <div class="sleep-log-trash" id="trash-icon"><i class="fa-solid fa-trash" onclick="{
-                    try{e.parentNode.parentNode.parentNode.lastChild.className = 'last-log';}catch(error){}
-                    return this.parentNode.parentNode.remove();}"></i></div>
-                
-            </div>
-            <div class="sleep-log">
-                <h2>Sleep Log #2</h2>
-                <hr class="solid">
-                <div class="sleep-log-details">
-                    <p><b><u>Date:</u></b> 11/17/2023</p>
-                    <p><b><u>Hours Slept:</u></b> 9</p>
-                    <p><b><u>Notes:</u></b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor cursus consequat. Nam eget commodo enim. Morbi sodales dapibus lobortis. Morbi tristique dui vel libero aliquet, id cursus lacus mollis. Mauris ut eros nec dui ornare dapibus.</p>
+                <div class="sleep-log">
+                    <h2>Sleep Log #2</h2>
+                    <hr class="solid">
+                    <div class="sleep-log-details">
+                        <p><b><u>Date:</u></b> 11/17/2023</p>
+                        <p><b><u>Hours Slept:</u></b> 9</p>
+                        <p><b><u>Notes:</u></b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor cursus consequat. Nam eget commodo enim. Morbi sodales dapibus lobortis. Morbi tristique dui vel libero aliquet, id cursus lacus mollis. Mauris ut eros nec dui ornare dapibus.</p>
+                    </div>
+                    <div class="sleep-log-trash" id="trash-icon"><i class="fa-solid fa-trash" onclick="{rem(this);}"></i></div>
                 </div>
-                <div class="sleep-log-trash" id="trash-icon"><i class="fa-solid fa-trash" onclick="{
-                    try{e.parentNode.parentNode.parentNode.lastChild.className = 'last-log';}catch(error){}
-                    return this.parentNode.parentNode.remove();}"></i></div>
-            </div>
-            <div class="sleep-log">
-                <h2>Sleep Log #3</h2>
-                <hr class="solid">
-                <div class="sleep-log-details">
-                    <p><b><u>Date:</u></b> 10/13/2023</p>
-                    <p><b><u>Hours Slept:</u></b> 4</p>
-                    <p><b><u>Notes:</u></b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor cursus consequat. Nam eget commodo enim. Morbi sodales dapibus lobortis. Morbi tristique dui vel libero aliquet, id cursus lacus mollis. Mauris ut eros nec dui ornare dapibus.</p>
+                <div class="sleep-log">
+                    <h2>Sleep Log #3</h2>
+                    <hr class="solid">
+                    <div class="sleep-log-details">
+                        <p><b><u>Date:</u></b> 10/13/2023</p>
+                        <p><b><u>Hours Slept:</u></b> 4</p>
+                        <p><b><u>Notes:</u></b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor cursus consequat. Nam eget commodo enim. Morbi sodales dapibus lobortis. Morbi tristique dui vel libero aliquet, id cursus lacus mollis. Mauris ut eros nec dui ornare dapibus.</p>
+                    </div>
+                    <div class="sleep-log-trash" id="trash-icon"><i class="fa-solid fa-trash" onclick="{rem(this);}"></i></div>
                 </div>
-                <div class="sleep-log-trash" id="trash-icon"><i class="fa-solid fa-trash" onclick="{
-                    try{e.parentNode.parentNode.parentNode.lastChild.className = 'last-log';}catch(error){}
-                    return this.parentNode.parentNode.remove();}"></i></div>
-            </div>
-            <div class="sleep-log">
-                <h2>Sleep Log #4</h2>
-                <hr class="solid">
-                <div class="sleep-log-details">
-                    <p><b><u>Date:</u></b> 9/3/2023</p>
-                    <p><b><u>Hours Slept:</u></b> 5</p>
-                    <p><b><u>Notes:</u></b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor cursus consequat. Nam eget commodo enim. Morbi sodales dapibus lobortis. Morbi tristique dui vel libero aliquet, id cursus lacus mollis. Mauris ut eros nec dui ornare dapibus.</p>
+                <div class="sleep-log">
+                    <h2>Sleep Log #4</h2>
+                    <hr class="solid">
+                    <div class="sleep-log-details">
+                        <p><b><u>Date:</u></b> 9/3/2023</p>
+                        <p><b><u>Hours Slept:</u></b> 5</p>
+                        <p><b><u>Notes:</u></b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor cursus consequat. Nam eget commodo enim. Morbi sodales dapibus lobortis. Morbi tristique dui vel libero aliquet, id cursus lacus mollis. Mauris ut eros nec dui ornare dapibus.</p>
+                    </div>
+                    <div class="sleep-log-trash" id="trash-icon"><i class="fa-solid fa-trash" onclick="{rem(this);}"></i></div>
                 </div>
-                <div class="sleep-log-trash" id="trash-icon"><i class="fa-solid fa-trash" onclick="{
-                    try{e.parentNode.parentNode.parentNode.lastChild.className = 'last-log';}catch(error){}
-                    return this.parentNode.parentNode.remove();}"></i></div>
-            </div>
-            <div class="last-log" id="last-log">
-                <h2>Sleep Log #5</h2>
-                <hr class="solid">
-                <div class="sleep-log-details">
-                    <p><b><u>Date:</u></b> 9/2/2023</p>
-                    <p><b><u>Hours Slept:</u></b> 6</p>
-                    <p><b><u>Notes:</u></b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor cursus consequat. Nam eget commodo enim. Morbi sodales dapibus lobortis. Morbi tristique dui vel libero aliquet, id cursus lacus mollis. Mauris ut eros nec dui ornare dapibus.</p>
+                <div class="last-log" id="last-log">
+                    <h2>Sleep Log #5</h2>
+                    <hr class="solid">
+                    <div class="sleep-log-details">
+                        <p><b><u>Date:</u></b> 9/2/2023</p>
+                        <p><b><u>Hours Slept:</u></b> 6</p>
+                        <p><b><u>Notes:</u></b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor cursus consequat. Nam eget commodo enim. Morbi sodales dapibus lobortis. Morbi tristique dui vel libero aliquet, id cursus lacus mollis. Mauris ut eros nec dui ornare dapibus.</p>
+                    </div>
+                    <div class="sleep-log-trash" id="trash-icon"><i class="fa-solid fa-trash" onclick="{rem(this);}"></i></div>
                 </div>
-                <div class="sleep-log-trash" id="trash-icon"><i class="fa-solid fa-trash" onclick="{
-                    try{e.parentNode.parentNode.parentNode.lastChild.className = 'last-log';}catch(error){}
-                    return this.parentNode.parentNode.remove();}"></i></div>
             </div>
-        </div>
-        </div>
-    
-    <form id="createLog" action="">
-        <h1>Add Entry</h1>
-        <div class="input-box">
-            <h4>Date:</h4>
-            <input type="date" id="date">
-        </div>
-        <div class="input-box">
-            <h4>Hours Slept:</h4>
-            <input type="text" id="hours">
-        </div>
-        <div class="input-box">
-            <h4>Notes:</h4>
-            <input type="text" id="notes">
-        </div>
+        </div> <!-- End Active -->
+
+        <!-- Add an Entry Form -->
+        <form id="createLog" action="">
+            <h1>Add Entry</h1>
+            <div class="input-box">
+                <h4>Date:</h4>
+                <input type="date" id="date">
+            </div>
+            <div class="input-box">
+                <h4>Hours Slept:</h4>
+                <input type="text" id="hours">
+            </div>
+            <div class="input-box">
+                <h4>Notes:</h4>
+                <input type="text" id="notes">
+            </div>
+            
+            <button type="submit" class="btn" id="add">Add</button>
+            <button type="submit" class="btn2" id ="cancel">Cancel</button>
+        </form>
         
-        <button type="submit" class="btn" id="add">Add</button>
-        <button type="submit" class="btn2" id ="cancel">Cancel</button>
-    </form>
-        
+        <!-- Bottom Navigation Bar -->
         <div id="bottom-navbar">
             <a href="#" class="nav-item" id="home"><i class="fa fa-fw fa-home"></i></a>
             <a href="#" class="nav-item active" id="log"><i class="fa fa-fw fa-clipboard-list"></i></a>
             <a href="#" class="nav-item" id="sounds"><i class="fa fa-fw fa-headphones"></i></a>
             <a href="#" class="nav-item" id="reminders"><i class="fa fa-fw fa-bell"></i></a>
         </div>
-    </div>
-        <!-- Navigation Bar -->
+    </div> <!-- End Wrapper -->
+
+        <!-- Navigation Bar Script -->
         <script src="https://kit.fontawesome.com/4f8ff236c5.js" crossorigin="anonymous"></script>
-        
-    
         
         <script>
 
-            
-
             document.addEventListener("DOMContentLoaded", function() {
-
+                // Add entry button
                 const sleepLogs = document.getElementById('sleep-logs');
                 document.getElementById("addbtn").addEventListener("click", function(event) {
-                    
                     document.getElementById('active').style.display = 'none';
                     document.getElementById('createLog').style.display = 'block';
-            });
-
+                });
+                
+                // Profile drop down menu
                 const profileIcon = document.getElementById('profile-icon');
                 const profileDropdown = document.getElementById('profile-dropdown');
                 const profileOption = document.getElementById('profile-option');
@@ -177,20 +167,10 @@
                     event.preventDefault();
                     console.log("Logout option clicked");
                 });
-            });
 
-            document.addEventListener("DOMContentLoaded", function() {
-                const trashIcon = document.getElementById('trash-icon');
-
-                trashIcon.addEventListener('click', function(event) {
-                    event.stopPropagation();
-                    console.log("Logout option clicked");
-                });
-            });
-
-            document.addEventListener("DOMContentLoaded", function() {
+                // Navigation Bar                
                 const navItems = document.querySelectorAll('.nav-item');
-    
+
                 navItems.forEach(item => {
                     item.addEventListener('click', function() {
                         navItems.forEach(item => {
@@ -203,29 +183,31 @@
                     });
                 });
             });
-
+            // clicked trash icon removes current node 
             function rem(e) {
-                    var sleepLogs = document.getElementById('sleep-logs');
-                    try{e.parentNode.parentNode.parentNode.lastChild.className = 'last-log';}catch(error){}
-                    return e.parentNode.parentNode.remove();
-                    
+                    // get element div of sleep logs
+                    let sleepLogs = document.getElementById('sleep-logs');
+                    // remove current element
+                    e.parentNode.parentNode.remove();
+                    // update last log formatting
+                    if(sleepLogs.lastElementChild != null) {
+                        sleepLogs.lastElementChild.className = 'last-log';
+                    }    
+                    reorder()              
             };
-
-            document.getElementById("add").addEventListener("click", function(event) {
-                // Prevent the form from being submitted
-                event.preventDefault();
-                const sleepLogs = document.getElementById('sleep-logs');
-                // Retrieve form inputs
-                var date = document.getElementById("date").value;
-                var hours = document.getElementById("hours").value;
-                var notes = document.getElementById("notes").value;
-
-                // Check if any field is empty
-                if (date.trim() === "" || hours.trim() === "") {
-                    alert("Please fill in all fields.");
-                    return;
+            // reorders sleep-logs #'s
+            function reorder() {
+                let sleepLogs = document.getElementById('sleep-logs');
+                let arr = sleepLogs.children;
+                var count = 1;
+                for (var i = 0; i < arr.length; i++) {
+                    let h = arr[i].getElementsByTagName('H2')[0];
+                    h.innerHTML = 'Sleep Log #' + count.toString();
+                    count ++;
                 }
-
+            }
+            // creates node to place in sleep log after forms is submitted
+            function makeEntry (date,hours,notes) {
                 const newDiv = document.createElement("div");
                 const newH2 = document.createElement("h2");
                 const newHr = document.createElement("hr");
@@ -242,13 +224,11 @@
                 newDivTrash.className = 'sleep-log-trash';
                 newDivTrash.id = 'trash-icon';
                 newDivTrash.appendChild(trash);
-                
-                newP2.innerHTML = '<u><b>Hours Slept: </b></u>' + hours;
-                newP3.innerHTML = '<u><b>Notes: </b></u>' + notes;
-                newP.innerHTML = '<u><b>Date: </b></u>' + date;
+                newP2.innerHTML = '<u><b>Hours Slept:</b></u> ' + hours;
+                newP3.innerHTML = '<u><b>Notes:</b></u> ' + notes;
+                newP.innerHTML = '<u><b>Date:</b></u> ' + date;
                 newHr.className = 'solid';
                 newH2.innerHTML = "Sleep Log #";
-                newDiv.className = 'last-log';
                 newDivP.className = 'sleep-log-details'
                 newDiv.appendChild(newH2);
                 newDiv.appendChild(newHr);
@@ -257,23 +237,37 @@
                 newDivP.appendChild(newP3);
                 newDiv.appendChild(newDivP);
                 newDiv.appendChild(newDivTrash);
-        
-                try{
-                    var child = document.getElementById('last-log');
-                    child.className = 'sleep-log';
-                    sleepLogs.lastChild.className = 'sleep-log';}catch(error){
-                        sleepLogs.lastChild.className = 'sleep-log';
-                    }
-                
-                sleepLogs.appendChild(newDiv);
+                return newDiv;
+            }
+            // add button of form add entry
+            document.getElementById("add").addEventListener("click", function(event) {
+                event.preventDefault();
+                const sleepLogs = document.getElementById('sleep-logs');
+                // Retrieve form inputs
+                var date = document.getElementById("date").value;
+                var hours = document.getElementById("hours").value;
+                var notes = document.getElementById("notes").value;
+
                 // Check if any field is empty
-                // If all validations pass, redirect to the next page
+                if (date.trim() === "" || hours.trim() === "") {
+                    alert("Please fill in all fields.");
+                    return;
+                }
+                var newDiv = makeEntry(date,hours,notes);
+                
+                if(sleepLogs.lastElementChild == null) {
+                    newDiv.className = 'last-log';
+                } else {
+                    sleepLogs.lastElementChild.className = 'sleep-log';
+                    newDiv.className = 'last-log';
+                }
+                sleepLogs.appendChild(newDiv);
+                reorder();
                 document.getElementById('active').style.display = 'flex';
                 document.getElementById('createLog').style.display = 'none';
             });
-
+            // cancel button of add entry form
             document.getElementById("cancel").addEventListener("click", function(event) {
-                // If all validations pass, redirect to the next page
                 event.preventDefault();
                 document.getElementById('active').style.display = 'flex';
                 document.getElementById('createLog').style.display = 'none';
