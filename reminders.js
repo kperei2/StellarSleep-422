@@ -2,6 +2,11 @@ var reminderTime = '8:30';
 
 function startTime() {
     setReminder();
+    toggleAlarm(1);
+    toggleAlarm(2);
+    toggleAlarm(3);
+    toggleAlarm(4);
+    toggleAlarm(5);
     var today = new Date();
     var h = today.getHours();
     var m = today.getMinutes();
@@ -51,3 +56,13 @@ function setReminder() {
     //alert(reminderTime);
     document.getElementById('alarm1').innerHTML = reminderTime;
 }
+
+function toggleAlarm(x) {
+    var d = document.getElementById('alarmset' + x);;
+    var c = document.getElementById('check' + x);
+    if(c.checked) {
+        d.style.opacity = 1;
+    } else {
+        d.style.opacity = .5;
+    }
+};

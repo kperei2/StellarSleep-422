@@ -24,6 +24,15 @@ body {
     gap: 50px
 }
 
+.alarmset1 {
+    background: #9dcfa4;
+    border: 2px solid #1f2d28;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 50px
+}
+
 
 .top-section {
     h1 {
