@@ -127,9 +127,19 @@ body {
 }
 
 
+input[type=time] {  
+    width: 100px;
+    height: 50px;
+    font-size: large;
+    font-family: bold;
+    background-color: #7ba683;
+}
+
 #setReminder {
     padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
+    margin-bottom: 10px;
     flex-direction: column;
     background-color: #9dcfa4;
     min-width: 100px;

@@ -28,29 +28,21 @@ function militaryToAMPM(i) {
 }
 
 function addAlarm() {
-    let h = document.getElementById('hour').value;
-    let m = document.getElementById('minute').value;
-    var ampm = 'am';
-    if (h < 0 || h > 23 || h === '') {
-        h = 8;
-    }
-    if (m < 0 || m > 59 || m === '') {
-        m = 30;
-    }
-    if (m < 10) 
-        m = '0' + m;
-    if (h > 11) { ampm = 'pm'};
+    x = document.getElementById('minute').value;
+    var [h, m] = x.split(':');
+    ampm = 'am';
+    if (h > 11)
+        ampm = 'pm';
     h = militaryToAMPM(h);
-    
-    reminderTime = h + ':' + m + ' ' + ampm;
+    reminderTime = h + ':' + m + " " + ampm
     localStorage.setItem('reminderTime', reminderTime);
-    window.location.href = 'reminders.html';
-    //alert(reminderTime);    
+    window.location.href = 'reminders.html';    
 }
 
 
 function setReminder() {
     reminderTime = localStorage.getItem('reminderTime');
+    //alert(reminderTime);
     if (reminderTime === null) 
         reminderTime = '8:15';
     //alert(reminderTime);
