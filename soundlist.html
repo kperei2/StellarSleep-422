@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound List</title>
+    <link rel="stylesheet" href="soundlist.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="top-bar">
+            <a href="soundlist.html" id="back">
+              <i class="material-symbols-rounded" style="font-size: 1.5em; font-weight: bold;">arrow_back</i>
+            </a>
+            <span>Song List</span>
+            <i id="more-music" class="material-symbols-rounded" style="font-size: 1.5em;">person</i>
+          </div>
+        <div class="music-list">
+            <ul>
+                <li onclick="loadSelectedSong(0)">
+                    <div class="row">
+                        <img src="images/music-9.jpg"></img>
+                        <span>Rain & Thunder</span>
+                        <p>Sleep Sounds</p>
+                    </div>
+                    <span class="audio-duration">60:40</span>
+                </li>
+                <li onclick="loadSelectedSong(1)">
+                    <div class="row">
+                        <img src="images/music-1.jpg"></img>
+                        <span>Rain Sounds #1</span>
+                        <p>Sleep Sounds</p>
+                    </div>
+                    <span class="audio-duration">60:00</span>
+                </li>
+                <li onclick="loadSelectedSong(2)">
+                    <div class="row">
+                        <img src="images/music-2.jpg" ></img>
+                        <span>Rain Sounds #2</span>
+                        <p>Sleep Sounds</p>
+                    </div>
+                    <span class="audio-duration">60:00</span>
+                </li>
+                <li onclick="loadSelectedSong(3)">
+                    <div class="row">
+                        <img src="images/music-3.jpg" ></img>
+                        <span>Rain Sounds #3</span>
+                        <p>Sleep Sounds</p>
+                    </div>
+                    <span class="audio-duration">60:31</span>
+                </li>
+                <li onclick="loadSelectedSong(4)">
+                    <div class="row">
+                        <img src="images/music-4.jpg" ></img>
+                        <span>White Noise #1</span>
+                        <p>Sleep Sounds</p>
+                    </div>
+                    <span class="audio-duration">59:59</span>
+                </li>
+                <li onclick="loadSelectedSong(5)">
+                    <div class="row">
+                        <img src="images/music-5.jpg" ></img>
+                        <span>White Noise #1</span>
+                        <p>Sleep Sounds</p>
+                    </div>
+                    <span class="audio-duration">59:57</span>
+                </li>
+                <li onclick="loadSelectedSong(6)">
+                    <div class="row">
+                        <img src="images/music-6.jpg" ></img>
+                        <span>Nature Sounds</span>
+                        <p>Sleep Sounds</p>
+                    </div>
+                    <span class="audio-duration">60:00</span>
+                </li>
+                <li onclick="loadSelectedSong(7)">
+                    <div class="row">
+                        <img src="images/music-7.jpg" ></img>
+                        <span>City Sounds #1</span>
+                        <p>Sleep Sounds</p>
+                    </div>
+                    <span class="audio-duration">61:46</span>
+                </li>
+                <li onclick="loadSelectedSong(8)">
+                    <div class="row">
+                        <img src="images/music-8.jpg" ></img>
+                        <span>City Sounds #2</span>
+                        <p>Sleep Sounds</p>
+                    </div>
+                    <span class="audio-duration">65:37</span>
+                </li>
+            </ul>
+          </div>
+        <script src="https://kit.fontawesome.com/4f8ff236c5.js" crossorigin="anonymous"></script>
+        <div id="bottom-navbar">
+            <a href="home.html" class="nav-item" id="home"><i class="fa fa-fw fa-home"></i></a>
+            <a href="logs.html" class="nav-item" id="log"><i class="fa fa-fw fa-clipboard-list"></i></a>
+            <a href="soundlist.html" class="nav-item active" id="sounds"><i class="fa fa-fw fa-headphones"></i></a>
+            <a href="reminders.html" class="nav-item" id="reminders"><i class="fa fa-fw fa-bell"></i></a>
+        </div>
+        
+        <script src="js/music-list.js"></script>
+        <script src="js/script.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const navItems = document.querySelectorAll('.nav-item');
+    
+                navItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        navItems.forEach(item => {
+                            item.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    });
+                });
+            });
+        </script>
+        <script>
+            function loadSelectedSong(index) {
+                localStorage.setItem("selectedSongIndex", index);
+                window.location.href = "player.html";
+            }
+        </script>
+    </div>    
+</body>
+</html>
