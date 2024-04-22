@@ -45,8 +45,8 @@ body {
 }
   
 .top-bar span{
+    display: flex;
     font-size: 18px;
-    margin-right: 180px;
     color:#89b683;
     font-weight: bold;
     margin-bottom: 100px;
@@ -199,10 +199,8 @@ ul li .audio-duration{
 
 /* Profile Icon */
 .profile-icon {
-    margin-top: 10px;
-    position: absolute;
-    top: 21px;
-    right: 20px;
+    top: 10px;
+    right: 17px;
     width: 40px;
     height: 40px;
     background-color: #1f2d28;
