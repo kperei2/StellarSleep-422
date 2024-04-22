@@ -77,7 +77,7 @@ body {
     align-items: center;
     justify-content: space-between;
     display:block;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     
 }
 
@@ -120,7 +120,7 @@ body {
 
 .music-list ul li .row span{
     font-size: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 27px;
 }
 
 ul li .row span{
