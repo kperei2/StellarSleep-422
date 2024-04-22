@@ -10,10 +10,10 @@ Create Account
 -enter in more profile information, click finish to proceed
 
 Navigation - move through the app (bottom of screen)
-  -navigate through the application using the navigation bar that appears at the bottom of the page
+-navigate through the application using the navigation bar that appears at the bottom of the page
 
 Sleep Tracking -Track your sleep (home icon)
-Click a button and time your sleep.
+-click a button and time your sleep.
 -click the start sleep tracking button,
 -click the stop button if you want to stop it
      
@@ -29,7 +29,7 @@ Reminders (alrm icon)
 - disable reminders by clicking the scroll button
 
 Sounds (volume icon)
-- Play sounds to help you go to sleep.
+-play sounds to help you go to sleep.
 -pick a song
 -song will appear on another page
 -use controls to play/pause as well as skip next and skip previous
