@@ -21,9 +21,8 @@
         <div class="profile-icon" id="profile-icon">
             <i class="fas fa-user"></i>
             <div class="dropdown-content" id="profile-dropdown">
-                <a href="#" id="profile-option">Profile</a>
-                <a href="#" id="logs-option">Logs</a>
-                <a href="#" id="logout-option">Logout</a>
+                <a href="createaccount.html" id="profile-option">Profile</a>
+                <a href="createaccount.html" id="logout-option">Logout</a>
             </div>
         </div>
         <!-- Active Div -->
@@ -138,7 +137,6 @@
                 const profileIcon = document.getElementById('profile-icon');
                 const profileDropdown = document.getElementById('profile-dropdown');
                 const profileOption = document.getElementById('profile-option');
-                const logsOption = document.getElementById('logs-option');
                 const logoutOption = document.getElementById('logout-option');
 
                 profileIcon.addEventListener('click', function(event) {
@@ -157,16 +155,13 @@
                 profileOption.addEventListener('click', function(event) {
                     event.preventDefault();
                     console.log("Profile option clicked");
-                });
-
-                logsOption.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    console.log("Logs option clicked");
+                    window.location.href = "profileinfo.html";
                 });
 
                 logoutOption.addEventListener('click', function(event) {
                     event.preventDefault();
                     console.log("Logout option clicked");
+                    window.location.href = "createaccount.html";
                 });
 
                 // Navigation Bar                
