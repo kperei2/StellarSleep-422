@@ -6,15 +6,25 @@
     <title>Sound List</title>
     <link rel="stylesheet" href="soundlist.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="https://kit.fontawesome.com/ef926559c6.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="wrapper">
         <div class="top-bar">
             <a href="soundlist.html" id="back">
-              <i class="material-symbols-rounded" style="font-size: 1.5em; font-weight: bold;">arrow_back</i>
+              <i class="material-symbols-rounded" style="font-size: 1.5em; font-weight: bold; visibility: hidden;">arrow_back</i>
             </a>
             <span>Song List</span>
-            <i id="more-music" class="material-symbols-rounded" style="font-size: 1.5em;">person</i>
+            <div class="profile-icon" id="profile-icon">
+                <script src="https://kit.fontawesome.com/ef926559c6.js" crossorigin="anonymous"></script>
+                <div class="profile-icon" id="profile-icon">
+                    <i class="fas fa-user"></i>
+                    <div class="dropdown-content" id="profile-dropdown">
+                        <a href="profile.html" id="profile-option">Profile</a>
+                        <a href="login.html" id="logout-option">Logout</a>
+                    </div>
+                </div>
+            </div>
           </div>
         <div class="music-list">
             <ul>
@@ -92,7 +102,12 @@
                 </li>
             </ul>
           </div>
-        <script src="https://kit.fontawesome.com/4f8ff236c5.js" crossorigin="anonymous"></script>
+        <div id="bottom-navbar">
+            <a href="home.html" class="nav-item" ><i class="fa fa-fw fa-home"></i></a>
+            <a href="logs.html" class="nav-item" ><i class="fa fa-fw fa-clipboard-list"></i></a>
+            <a href="soundlist.html" class="nav-item active" ><i class="fa fa-fw fa-headphones"></i></a>
+            <a href="reminders.html" class="nav-item" ><i class="fa fa-fw fa-bell"></i></a>
+        </div>
         
         <script src="js/music-list.js"></script>
         <script src="js/script.js"></script>
@@ -116,11 +131,106 @@
                 window.location.href = "player.html";
             }
         </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const profileIcon = document.getElementById('profile-icon');
+                const profileDropdown = document.getElementById('profile-dropdown');
+                const profileOption = document.getElementById('profile-option');
+                const logoutOption = document.getElementById('logout-option');
+    
+                profileIcon.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    profileIcon.classList.toggle('active');
+                });
+    
+                profileDropdown.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                });
+    
+                document.addEventListener('click', function() {
+                    profileIcon.classList.remove('active');
+                });
+    
+                profileOption.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    console.log("Profile option clicked");
+                    window.location.href = "profileinfo.html";
+                });
+    
+                logoutOption.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    console.log("Logout option clicked");
+                    window.location.href = "login.html";
+                });
+            });
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Add entry button
+                const sleepLogs = document.getElementById('sleep-logs');
+                document.getElementById("addbtn").addEventListener("click", function(event) {
+                    document.getElementById('active').style.display = 'none';
+                    document.getElementById('createLog').style.display = 'block';
+                });
+                
+                // Profile drop down menu
+                const profileIcon = document.getElementById('profile-icon');
+                const profileDropdown = document.getElementById('profile-dropdown');
+                const profileOption = document.getElementById('profile-option');
+                const logoutOption = document.getElementById('logout-option');
+
+                profileIcon.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    profileIcon.classList.toggle('active');
+                });
+
+                profileDropdown.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                });
+
+                document.addEventListener('click', function() {
+                    profileIcon.classList.remove('active');
+                });
+
+                profileOption.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    console.log("Profile option clicked");
+                    window.location.href = "profileinfo.html";
+                });
+
+                logoutOption.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    console.log("Logout option clicked");
+                    window.location.href = "createaccount.html";
+                });
+
+                // Navigation Bar                
+                const navItems = document.querySelectorAll('.nav-item');
+
+                navItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        navItems.forEach(item => {
+                            item.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                        if(item.id == 'log') {
+                            window.location.href = "logs.html";
+                        }else if(item.id == 'home') {
+                            window.location.href = "home.html";
+                        } else if(item.id == 'sounds') {
+                            window.location.href = "soundlist.html";
+                        } else if(item.id == 'reminders') {
+                            window.location.href = "reminders.html";
+                        } 
+                    });
+                });
+            });
+        </script>
     </div>
     <div id="bottom-navbar">
-        <a href="home.html" class="nav-item active" id="home"><i class="fas fa-home"></i></a>
+        <a href="home.html" class="nav-item" id="home"><i class="fas fa-home"></i></a>
         <a href="logs.html" class="nav-item" id="log"><i class="fas fa-book"></i></a>
-        <a href="soundlist.html" class="nav-item" id="sounds"><i class="fas fa-volume-up"></i></a>
+        <a href="soundlist.html" class="nav-item active" id="sounds"><i class="fas fa-volume-up"></i></a>
         <a href="reminders.html" class="nav-item" id="reminders"><i class="fas fa-bell"></i></a>
     </div> 
 </body>
