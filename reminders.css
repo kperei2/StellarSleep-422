@@ -163,9 +163,9 @@ label {
     text-decoration: none;
     text-align: center;
     flex-grow: 1;
-    padding: 17px;
+    padding: 28px;
     transition: background-color 0.3s;
-        
+
 }
 
 .active {
