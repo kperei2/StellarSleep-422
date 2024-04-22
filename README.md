@@ -29,11 +29,11 @@ Reminders (alrm icon)
 - disable reminders by clicking the scroll button.
 
 Sounds (volume icon)
--play sounds to help you go to sleep.
--pick a song.
--song will appear on another page.
--use controls to play/pause as well as skip next and skip previous.
--select a particular point in the sound by using the duration bar and pressing anywhere on it.
+- play sounds to help you go to sleep.
+- pick a song.
+- song will appear on another page.
+- use controls to play/pause as well as skip next and skip previous.
+- select a particular point in the sound by using the duration bar and pressing anywhere on it.
 
 Profile information
 - Appears when drop down menu is clicked.
