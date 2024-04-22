@@ -19,7 +19,7 @@
         </div>
 
         <!-- Logo -->
-        <div class="logo">
+        <div class="logo" id="logo">
             <img src="stellarsleeplogo.png" alt="Stellar Sleep Logo">
         </div>
 
@@ -40,7 +40,7 @@
                 <p id="timer-countdown">00:00:00</p>
             </div>
             <div class="icon-wrapper">
-                <i class="fas fa-play"></i>
+                <i class="fas fa-play" id="play-icon"></i>
             </div>
         </div>
 
@@ -101,6 +101,48 @@
                 event.preventDefault();
                 console.log("Logout option clicked");
             });
+
+            const sleepTrackingCircle = document.getElementById('sleep-tracking-circle');
+            const trackingStatus = document.querySelector('.tracking-status');
+            const timerDiv = document.getElementById('timer');
+            const timerCountdown = document.getElementById('timer-countdown');
+            const playIcon = document.getElementById('play-icon');
+            let timerInterval;
+            let seconds = 0;
+
+            sleepTrackingCircle.addEventListener('click', function() {
+                if (trackingStatus.textContent === "Start Sleep Tracking") {
+                    startSleepTracking();
+                    playIcon.classList.remove('fa-play');
+                    playIcon.classList.add('fa-stop');
+                } else {
+                    stopSleepTracking();
+                    playIcon.classList.remove('fa-stop');
+                    playIcon.classList.add('fa-play');
+                }
+            });
+
+            function startSleepTracking() {
+                trackingStatus.textContent = "Tracking Sleep";
+                timerDiv.style.display = "block";
+                timerInterval = setInterval(updateTimer, 1000);
+            }
+
+            function stopSleepTracking() {
+                trackingStatus.textContent = "Start Sleep Tracking";
+                clearInterval(timerInterval);
+                timerDiv.style.display = "none";
+                seconds = 0;
+                updateTimer();
+            }
+
+            function updateTimer() {
+                const hours = Math.floor(seconds / 3600);
+                const minutes = Math.floor((seconds % 3600) / 60);
+                const secs = seconds % 60;
+                timerCountdown.textContent = ('0' + hours).slice(-2) + ':' + ('0' + minutes).slice(-2) + ':' + ('0' + secs).slice(-2);
+                seconds++;
+            }
         });
     </script>
 </body>
