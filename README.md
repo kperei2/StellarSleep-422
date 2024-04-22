@@ -11,8 +11,9 @@ Navigation
   -navigate through the application using the navigation bar that appears at the bottom of the page
 
 Sleep Tracking (home)
-- Click a button and time your sleep.
--click the start sleep tracking button, click the stop button if you want to stop it
+Click a button and time your sleep.
+-click the start sleep tracking button,
+-click the stop button if you want to stop it
      
 Log - Document sleep time, and add notes to detail overall sleep (book).
 - click add entry to create a new entry, enter a date, time and notes, then press submit
