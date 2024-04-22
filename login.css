@@ -70,6 +70,19 @@ body{
     font-size: 20px;
 }
 
+/* Logo */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo img {
+    width: 200px;
+}
+
+
 .wrapper .remember-forgot{
     display: flex;
     justify-content: space-between;
