@@ -44,7 +44,7 @@ function setReminder() {
     reminderTime = localStorage.getItem('reminderTime');
     //alert(reminderTime);
     if (reminderTime === null) 
-        reminderTime = '8:15';
+        reminderTime = '8:15 pm';
     //alert(reminderTime);
     document.getElementById('alarm1').innerHTML = reminderTime;
 }
