@@ -3,19 +3,19 @@ Begin application with login.html, or if you want to skip the login process star
 
 
 Login
--enter in dummy user and password and press login to continue to home page
+- enter in dummy user and password and press login to continue to home page
 
 Create Account
--enter in required information, click button to proceed.
--enter in more profile information, click finish to proceed.
+- enter in required information, click button to proceed.
+- enter in more profile information, click finish to proceed.
 
 Navigation - move through the app (bottom of screen)
--navigate through the application using the navigation bar that appears at the bottom of the page
+- navigate through the application using the navigation bar that appears at the bottom of the page
 
 Sleep Tracking -Track your sleep (home icon)
--click a button and time your sleep.
--click the start sleep tracking button.
--click the stop button if you want to stop it.
+- click a button and time your sleep.
+- click the start sleep tracking button.
+- click the stop button if you want to stop it.
      
 Log - Document sleep time, and add notes to detail overall sleep (book)
 - click add entry to create a new entry, enter a date, time and notes, then press submit.
@@ -36,8 +36,8 @@ Sounds (volume icon)
 -select a particular point in the sound by using the duration bar and pressing anywhere on it.
 
 Profile information
--Appears when drop down menu is clicked.
--Change infromation and press button.
+- Appears when drop down menu is clicked.
+- Change infromation and press button.
 
 AI Usage:
-  -Not Used
+- Not Used
