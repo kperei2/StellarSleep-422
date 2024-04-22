@@ -63,36 +63,32 @@
             const profileIcon = document.getElementById('profile-icon');
             const profileDropdown = document.getElementById('profile-dropdown');
             const profileOption = document.getElementById('profile-option');
-            const logsOption = document.getElementById('logs-option');
             const logoutOption = document.getElementById('logout-option');
-
+    
             profileIcon.addEventListener('click', function(event) {
                 event.stopPropagation();
                 profileIcon.classList.toggle('active');
             });
-
+    
             profileDropdown.addEventListener('click', function(event) {
                 event.stopPropagation();
             });
-
+    
             document.addEventListener('click', function() {
                 profileIcon.classList.remove('active');
             });
-
+    
             profileOption.addEventListener('click', function(event) {
                 event.preventDefault();
                 console.log("Profile option clicked");
+                window.location(window.location.href = "profileinfo.html")
             });
-
-            logsOption.addEventListener('click', function(event) {
-                event.preventDefault();
-                console.log("Logs option clicked");
-            });
-
+    
             logoutOption.addEventListener('click', function(event) {
                 event.preventDefault();
                 console.log("Logout option clicked");
+                window.location(window.location.href = "logout.html")
             });
         });
-    </script>
+      </script>
 </html>
