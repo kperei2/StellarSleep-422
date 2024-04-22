@@ -14,7 +14,7 @@
     left: 50%;
     transform: translateX(-38%);
     width: 90%;
-    max-width: 800px;
+    max-width: 500px;
     margin-top: 10px; 
     z-index: 0; 
     flex-direction: column;
@@ -22,7 +22,7 @@
 
 .sleep-logs .sleep-log {
     width: calc(80% - 20px);
-    max-width: 800px;
+    max-width: 500px;
     padding: 20px;
     background-color: #1f2d28;
     border: 2px solid #a3d1ae;
@@ -34,7 +34,7 @@
 
 .sleep-logs .last-log {
     width: calc(80% - 20px);
-    max-width: 800px;
+    max-width: 500px;
     padding: 20px;
     background-color: #1f2d28;
     border: 2px solid #a3d1ae;
@@ -215,7 +215,7 @@ body {
     width: 100%;
     height: 7%;
     left:0%;
-    background-color: #9dcfa4;
+    background-color: #1f2d28;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -240,6 +240,30 @@ body {
         
 }
 
+/* Navigation Bar */
+#bottom-navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1f2d28;
+    border-top: 2px solid #a3d1ae;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000; 
+}
+
+.nav-item {
+    color: #a3d1ae;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.nav-item.active {
+    color: #fff;
+}
+
 .page-content {
     padding-bottom: 0px;
 }
@@ -249,10 +273,13 @@ body {
     .sleep-logs {
         flex-direction: column;
         top: calc(10% + 100px);
+		width: calc(100% - 80px);
+		max-width:600px;
     }
 
     .sleep-logs .sleep-log, .sleep-info .last-log{
         width: calc(100% - 80px);
+		max-width: 300px;
     }
 
     .wrapper{
