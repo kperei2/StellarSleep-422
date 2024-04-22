@@ -1,10 +1,11 @@
 
-Begin application with login.html
+Begin application with login.html, or if you want to skip the login process start with home.html which is where the main content of our application begins.
+
 
 Login
 -enter in dummy user and password and press login to continue to home page
 
-Create Account/
+Create Account
 -enter in required information, click button to proceed
 -enter in more profile information, click finish to proceed
 
