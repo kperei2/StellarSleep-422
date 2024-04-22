@@ -1,0 +1,284 @@
+<!-- change file name pls -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logs</title>
+    <link rel="stylesheet" href="logs.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="stellarsleeplogo.png" alt="Stellar Sleep Logo">
+        </div>
+
+        <!-- Profile Icon -->
+        <div class="profile-icon" id="profile-icon">
+            <i class="fas fa-user"></i>
+            <div class="dropdown-content" id="profile-dropdown">
+                <a href="#" id="profile-option">Profile</a>
+                <a href="#" id="logs-option">Logs</a>
+                <a href="#" id="logout-option">Logout</a>
+            </div>
+        </div>
+        <!-- Active Div -->
+        <div id="active">
+            <!-- Add Entry Button -->
+            <div class="add-entry">
+                <div class="add-button" id="addbtn">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="add-entry-text">Add Entry</div>
+            </div>
+
+            <!-- Sleep Information Boxes -->
+            <div class="sleep-logs" id="sleep-logs">
+                <div class="sleep-log">
+                    <h2>Sleep Log #1</h2>
+                    <hr class="solid">
+                    <div class="sleep-log-details">
+                        <p><b><u>Date:</u></b> 12/23/2023</p>
+                        <p><b><u>Hours Slept:</u></b> 8</p>
+                        <p><b><u>Notes:</u></b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor cursus consequat. Nam eget commodo enim. Morbi sodales dapibus lobortis. Morbi tristique dui vel libero aliquet, id cursus lacus mollis. Mauris ut eros nec dui ornare dapibus.</p>
+                    </div>
+                    <div class="sleep-log-trash" id="trash-icon"><i class="fa-solid fa-trash" onclick="{rem(this);}"></i></div>
+                    
+                </div>
+                <div class="sleep-log">
+                    <h2>Sleep Log #2</h2>
+                    <hr class="solid">
+                    <div class="sleep-log-details">
+                        <p><b><u>Date:</u></b> 11/17/2023</p>
+                        <p><b><u>Hours Slept:</u></b> 9</p>
+                        <p><b><u>Notes:</u></b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor cursus consequat. Nam eget commodo enim. Morbi sodales dapibus lobortis. Morbi tristique dui vel libero aliquet, id cursus lacus mollis. Mauris ut eros nec dui ornare dapibus.</p>
+                    </div>
+                    <div class="sleep-log-trash" id="trash-icon"><i class="fa-solid fa-trash" onclick="{rem(this);}"></i></div>
+                </div>
+                <div class="sleep-log">
+                    <h2>Sleep Log #3</h2>
+                    <hr class="solid">
+                    <div class="sleep-log-details">
+                        <p><b><u>Date:</u></b> 10/13/2023</p>
+                        <p><b><u>Hours Slept:</u></b> 4</p>
+                        <p><b><u>Notes:</u></b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor cursus consequat. Nam eget commodo enim. Morbi sodales dapibus lobortis. Morbi tristique dui vel libero aliquet, id cursus lacus mollis. Mauris ut eros nec dui ornare dapibus.</p>
+                    </div>
+                    <div class="sleep-log-trash" id="trash-icon"><i class="fa-solid fa-trash" onclick="{rem(this);}"></i></div>
+                </div>
+                <div class="sleep-log">
+                    <h2>Sleep Log #4</h2>
+                    <hr class="solid">
+                    <div class="sleep-log-details">
+                        <p><b><u>Date:</u></b> 9/3/2023</p>
+                        <p><b><u>Hours Slept:</u></b> 5</p>
+                        <p><b><u>Notes:</u></b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor cursus consequat. Nam eget commodo enim. Morbi sodales dapibus lobortis. Morbi tristique dui vel libero aliquet, id cursus lacus mollis. Mauris ut eros nec dui ornare dapibus.</p>
+                    </div>
+                    <div class="sleep-log-trash" id="trash-icon"><i class="fa-solid fa-trash" onclick="{rem(this);}"></i></div>
+                </div>
+                <div class="last-log" id="last-log">
+                    <h2>Sleep Log #5</h2>
+                    <hr class="solid">
+                    <div class="sleep-log-details">
+                        <p><b><u>Date:</u></b> 9/2/2023</p>
+                        <p><b><u>Hours Slept:</u></b> 6</p>
+                        <p><b><u>Notes:</u></b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor cursus consequat. Nam eget commodo enim. Morbi sodales dapibus lobortis. Morbi tristique dui vel libero aliquet, id cursus lacus mollis. Mauris ut eros nec dui ornare dapibus.</p>
+                    </div>
+                    <div class="sleep-log-trash" id="trash-icon"><i class="fa-solid fa-trash" onclick="{rem(this);}"></i></div>
+                </div>
+            </div>
+        </div> <!-- End Active -->
+
+        <!-- Add an Entry Form -->
+        <form id="createLog" action="">
+            <h1>Add Entry</h1>
+            <div class="input-box">
+                <h4>Date:</h4>
+                <input type="date" id="date">
+            </div>
+            <div class="input-box">
+                <h4>Hours Slept:</h4>
+                <input type="text" id="hours">
+            </div>
+            <div class="input-box">
+                <h4>Notes:</h4>
+                <input type="text" id="notes">
+            </div>
+            
+            <button type="submit" class="btn" id="add">Add</button>
+            <button type="submit" class="btn2" id ="cancel">Cancel</button>
+        </form>
+        
+        <!-- Bottom Navigation Bar -->
+        <div id="bottom-navbar">
+            <a href="#" class="nav-item" id="home"><i class="fa fa-fw fa-home"></i></a>
+            <a href="#" class="nav-item active" id="log"><i class="fa fa-fw fa-clipboard-list"></i></a>
+            <a href="#" class="nav-item" id="sounds"><i class="fa fa-fw fa-headphones"></i></a>
+            <a href="#" class="nav-item" id="reminders"><i class="fa fa-fw fa-bell"></i></a>
+        </div>
+    </div> <!-- End Wrapper -->
+
+        <!-- Navigation Bar Script -->
+        <script src="https://kit.fontawesome.com/4f8ff236c5.js" crossorigin="anonymous"></script>
+        
+        <script>
+
+            document.addEventListener("DOMContentLoaded", function() {
+                // Add entry button
+                const sleepLogs = document.getElementById('sleep-logs');
+                document.getElementById("addbtn").addEventListener("click", function(event) {
+                    document.getElementById('active').style.display = 'none';
+                    document.getElementById('createLog').style.display = 'block';
+                });
+                
+                // Profile drop down menu
+                const profileIcon = document.getElementById('profile-icon');
+                const profileDropdown = document.getElementById('profile-dropdown');
+                const profileOption = document.getElementById('profile-option');
+                const logsOption = document.getElementById('logs-option');
+                const logoutOption = document.getElementById('logout-option');
+
+                profileIcon.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    profileIcon.classList.toggle('active');
+                });
+
+                profileDropdown.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                });
+
+                document.addEventListener('click', function() {
+                    profileIcon.classList.remove('active');
+                });
+
+                profileOption.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    console.log("Profile option clicked");
+                });
+
+                logsOption.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    console.log("Logs option clicked");
+                });
+
+                logoutOption.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    console.log("Logout option clicked");
+                });
+
+                // Navigation Bar                
+                const navItems = document.querySelectorAll('.nav-item');
+
+                navItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        navItems.forEach(item => {
+                            item.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                        if(item.id == 'log') {
+                            window.location.href = "logs.html";
+                        }else if(item.id == 'home') {
+                            window.location.href = "home.html";
+                        } else if(item.id == 'sounds') {
+                            window.location.href = "soundlist.html";
+                        } else if(item.id == 'reminders') {
+                            window.location.href = "reminders.html";
+                        } 
+                    });
+                });
+            });
+            // clicked trash icon removes current node 
+            function rem(e) {
+                    // get element div of sleep logs
+                    let sleepLogs = document.getElementById('sleep-logs');
+                    // remove current element
+                    e.parentNode.parentNode.remove();
+                    // update last log formatting
+                    if(sleepLogs.lastElementChild != null) {
+                        sleepLogs.lastElementChild.className = 'last-log';
+                    }    
+                    reorder()              
+            };
+            // reorders sleep-logs #'s
+            function reorder() {
+                let sleepLogs = document.getElementById('sleep-logs');
+                let arr = sleepLogs.children;
+                var count = 1;
+                for (var i = 0; i < arr.length; i++) {
+                    let h = arr[i].getElementsByTagName('H2')[0];
+                    h.innerHTML = 'Sleep Log #' + count.toString();
+                    count ++;
+                }
+            }
+            // creates node to place in sleep log after forms is submitted
+            function makeEntry (date,hours,notes) {
+                const newDiv = document.createElement("div");
+                const newH2 = document.createElement("h2");
+                const newHr = document.createElement("hr");
+                const newDivP = document.createElement("div");
+                const newP = document.createElement("p");
+                const newP2 = document.createElement("p");
+                const newP3 = document.createElement("p");
+                const newDivTrash = document.createElement("div");
+                const trash = document.createElement("i");
+                trash.className = 'fa-solid fa-trash';
+                trash.onclick = function() {
+                    rem(this);
+                };
+                newDivTrash.className = 'sleep-log-trash';
+                newDivTrash.id = 'trash-icon';
+                newDivTrash.appendChild(trash);
+                newP2.innerHTML = '<u><b>Hours Slept:</b></u> ' + hours;
+                newP3.innerHTML = '<u><b>Notes:</b></u> ' + notes;
+                newP.innerHTML = '<u><b>Date:</b></u> ' + date;
+                newHr.className = 'solid';
+                newH2.innerHTML = "Sleep Log #";
+                newDivP.className = 'sleep-log-details'
+                newDiv.appendChild(newH2);
+                newDiv.appendChild(newHr);
+                newDivP.appendChild(newP);
+                newDivP.appendChild(newP2);
+                newDivP.appendChild(newP3);
+                newDiv.appendChild(newDivP);
+                newDiv.appendChild(newDivTrash);
+                return newDiv;
+            }
+            // add button of form add entry
+            document.getElementById("add").addEventListener("click", function(event) {
+                event.preventDefault();
+                const sleepLogs = document.getElementById('sleep-logs');
+                // Retrieve form inputs
+                var date = document.getElementById("date").value;
+                var hours = document.getElementById("hours").value;
+                var notes = document.getElementById("notes").value;
+
+                // Check if any field is empty
+                if (date.trim() === "" || hours.trim() === "") {
+                    alert("Please fill in all fields.");
+                    return;
+                }
+                var newDiv = makeEntry(date,hours,notes);
+                
+                if(sleepLogs.lastElementChild == null) {
+                    newDiv.className = 'last-log';
+                } else {
+                    sleepLogs.lastElementChild.className = 'sleep-log';
+                    newDiv.className = 'last-log';
+                }
+                sleepLogs.appendChild(newDiv);
+                reorder();
+                document.getElementById('active').style.display = 'flex';
+                document.getElementById('createLog').style.display = 'none';
+            });
+            // cancel button of add entry form
+            document.getElementById("cancel").addEventListener("click", function(event) {
+                event.preventDefault();
+                document.getElementById('active').style.display = 'flex';
+                document.getElementById('createLog').style.display = 'none';
+            });
+        </script>
+    </div>    
+</body>
+</html>
