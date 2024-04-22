@@ -4,78 +4,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="home.css">
     <script src="https://kit.fontawesome.com/ef926559c6.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="top-section">
-        <h1>
-            Home
-        </h1>
-    </div>
-    
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <a href="#">
-            <i class="fas fa-home"></i> <!-- Home Icon -->
-            Home
-        </a>
-        <a href="#">
-            <i class="fas fa-book"></i> <!-- Log Icon -->
-            Log
-        </a>
-        <a href="#">
-            <i class="fas fa-volume-up"></i> <!-- Sounds Icon -->
-            Sounds
-        </a>
-        <a href="#">
-            <i class="fas fa-bell"></i> <!-- Reminders Icon -->
-            Reminders
-        </a>
-    </div>
-    
-    <!-- User Profile Dropdown -->
-    <div class="user-profile">
-        <i class="fas fa-user-circle" id="profile-icon"></i> <!-- User Profile Icon -->
-        <div class="dropdown-content" id="dropdown-content">
-            <a href="#">Home</a>
-            <a href="#">Profile</a>
-            <a href="#">Logout</a>
+
+     <!-- Navigation Bar -->
+     <div class="wrapper">
+        <div id="bottom-navbar">
+            <a href="home.html" class="nav-item active" id="home"><i class="fas fa-home"></i></a>
+            <a href="logs.html" class="nav-item" id="log"><i class="fas fa-book"></i></a>
+            <a href="soundlist.html" class="nav-item" id="sounds"><i class="fas fa-volume-up"></i></a>
+            <a href="reminders.html" class="nav-item" id="reminders"><i class="fas fa-bell"></i></a>
+        </div>
+
+        <!-- Logo -->
+        <div class="logo" id="logo">
+            <img src="stellarsleeplogo.png" alt="Stellar Sleep Logo">
+        </div>
+
+        <!-- Profile Icon -->
+        <div class="profile-icon" id="profile-icon">
+            <i class="fas fa-user"></i>
+            <div class="dropdown-content" id="profile-dropdown">
+                <a href="#" id="profile-option">Profile</a>
+                <a href="#" id="logout-option">Logout</a>
+            </div>
+        </div>
+
+        <!-- Sleep Tracking Circle -->
+        <div class="sleep-tracking-circle" id="sleep-tracking-circle">
+            <span class="tracking-status">Start Sleep Tracking</span>
+            <div id="timer" style="display: none;">
+                <p id="timer-countdown">00:00:00</p>
+            </div>
+            <div class="icon-wrapper">
+                <i class="fas fa-play" id="play-icon"></i>
+            </div>
+        </div>
+
+        <!-- Sleep Information Boxes -->
+        <div class="sleep-info">
+            <div class="current-night">
+                <h2>Last Night</h2>
+                <div class="sleep-info-details">
+                    <p>Hours Slept: 7</p>
+                    <p>Sleep Interruptions: 2</p>
+                    <p>Bedtime: 11:00 PM</p>
+                </div>
+            </div>
+            <div class="previous-month">
+                <h2>Previous Month</h2>
+                <div class="sleep-info-details">
+                    <p>Avg Hours Slept: 6.5</p>
+                    <p>Total Sleep Interruptions: 13</p>
+                    <p>Average Bedtime: 10:34 PM</p>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Sleep Tracking Circle -->
-    <div class="sleep-tracking-circle">
-        Start Sleep Tracking
-    </div>
-
-    <!-- Sleep Information Boxes -->
-    <div class="sleep-info">
-        <div class="current-night">
-            <h2>Current Night</h2>
-            <!-- Display current night sleep information here -->
-        </div>
-        <div class="previous-month">
-            <h2>Previous Month</h2>
-            <!-- Display previous month average sleep information here -->
-        </div>
-    </div>
-
-    <!-- JavaScript for Dropdown -->
+    <!-- JavaScript for Navbar and Sleep Tracking -->
     <script>
-        document.getElementById("profile-icon").addEventListener("click", function() {
-            document.getElementById("dropdown-content").classList.toggle("show");
-        });
-        window.addEventListener("click", function(event) {
-            if (!event.target.matches("#profile-icon")) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains("show")) {
-                        openDropdown.classList.remove("show");
-                    }
+        document.addEventListener("DOMContentLoaded", function() {
+            const profileIcon = document.getElementById('profile-icon');
+            const profileDropdown = document.getElementById('profile-dropdown');
+            const profileOption = document.getElementById('profile-option');
+            const logoutOption = document.getElementById('logout-option');
+
+            profileIcon.addEventListener('click', function(event) {
+                event.stopPropagation();
+                profileIcon.classList.toggle('active');
+            });
+
+            profileDropdown.addEventListener('click', function(event) {
+                event.stopPropagation();
+            });
+
+            document.addEventListener('click', function() {
+                profileIcon.classList.remove('active');
+            });
+
+            profileOption.addEventListener('click', function(event) {
+                event.preventDefault();
+                console.log("Profile option clicked");
+            });
+
+            logoutOption.addEventListener('click', function(event) {
+                event.preventDefault();
+                console.log("Logout option clicked");
+            });
+
+            const sleepTrackingCircle = document.getElementById('sleep-tracking-circle');
+            const trackingStatus = document.querySelector('.tracking-status');
+            const timerDiv = document.getElementById('timer');
+            const timerCountdown = document.getElementById('timer-countdown');
+            const playIcon = document.getElementById('play-icon');
+            let timerInterval;
+            let seconds = 0;
+
+            sleepTrackingCircle.addEventListener('click', function() {
+                if (trackingStatus.textContent === "Start Sleep Tracking") {
+                    startSleepTracking();
+                    playIcon.classList.remove('fa-play');
+                    playIcon.classList.add('fa-stop');
+                } else {
+                    stopSleepTracking();
+                    playIcon.classList.remove('fa-stop');
+                    playIcon.classList.add('fa-play');
                 }
+            });
+
+            function startSleepTracking() {
+                trackingStatus.textContent = "Tracking Sleep";
+                timerDiv.style.display = "block";
+                timerInterval = setInterval(updateTimer, 1000);
+            }
+
+            function stopSleepTracking() {
+                trackingStatus.textContent = "Start Sleep Tracking";
+                clearInterval(timerInterval);
+                timerDiv.style.display = "none";
+                seconds = 0;
+                updateTimer();
+            }
+
+            function updateTimer() {
+                const hours = Math.floor(seconds / 3600);
+                const minutes = Math.floor((seconds % 3600) / 60);
+                const secs = seconds % 60;
+                timerCountdown.textContent = ('0' + hours).slice(-2) + ':' + ('0' + minutes).slice(-2) + ':' + ('0' + secs).slice(-2);
+                seconds++;
             }
         });
     </script>

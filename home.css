@@ -1,132 +1,90 @@
-/* Basic reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body, h1, h2, h3, p, a {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Body styles */
 body {
+    margin: 0;
+    padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     display: flex;
-    flex-direction: column;
     align-items: center;
     min-height: 100vh;
     background: #1f2d28;
-    color: white;
+    background-size: cover;
+    background-position: center;
 }
 
-/* Navigation Bar styles */
-.navbar {
+/* Navigation Bar */
+#bottom-navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1f2d28;
+    border-top: 2px solid #a3d1ae;
+    height: 60px;
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #9dcfa4;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 15px 0; 
+    z-index: 1000; 
 }
 
-.navbar a {
+.nav-item {
+    color: #a3d1ae;
+    font-size: 24px;
     text-decoration: none;
-    color: white;
-    font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 0;
 }
 
-.navbar a i {
-    margin-bottom: 5px;
+.nav-item.active {
+    color: #fff;
 }
 
-.navbar a:hover {
-    background-color: #7ba683;
-}
-
-/* Sleep Tracking Circle styles */
-.sleep-tracking-circle {
+/* Logo */
+.logo {
     position: absolute;
-    top: 50%;
+    top: 20px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
+}
+
+.logo img {
     width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background-color: #9dcfa4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-.sleep-tracking-circle:hover {
-    background-color: #7ba683;
-}
-
-.user-profile {
+/* Profile Icon */
+.profile-icon {
     position: absolute;
     top: 20px;
     right: 20px;
-}
-
-.user-profile img {
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-}
-
-/* Sleep Tracking Circle styles */
-.sleep-tracking-circle {
-    margin-top: 50px;
-    text-align: center;
-}
-
-/* Sleep Information Boxes styles */
-.sleep-info {
+    background-color: #1f2d28;
     display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 100; 
 }
 
-.sleep-info .current-night,
-.sleep-info .previous-month {
-    width: 45%;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    text-align: center;
+.profile-icon i {
+    color: #a3d1ae;
+    font-size: 24px;
 }
 
-.sleep-info h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.sleep-info p {
-    font-size: 18px;
-}
-
-/* Dropdown Content */
-.dropdown-content {
+/* Dropdown Content for Profile Icon */
+.profile-icon .dropdown-content {
     display: none;
     position: absolute;
     background-color: #9dcfa4;
     min-width: 120px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
-    right: 0;
-    top: 60px;
     border-radius: 10px;
     overflow: hidden;
+    right: 0;
+    top: 60px; 
 }
 
-.dropdown-content a {
+.profile-icon .dropdown-content a {
     color: white; 
     padding: 12px 16px;
     text-decoration: none;
@@ -134,10 +92,116 @@ body {
     border-radius: 10px; 
 }
 
-.dropdown-content a:hover {
+.profile-icon .dropdown-content a:hover {
     background-color: #7ba683; 
 }
 
-.show {
+.profile-icon.active .dropdown-content {
     display: block;
+}
+
+/* Sleep Tracking Circle styles */
+.sleep-tracking-circle {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid #a3d1ae;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #a3d1ae;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    z-index: 1;
+}
+
+.sleep-tracking-circle .icon-wrapper {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sleep-tracking-circle:hover {
+    background-color: #a3d1ae;
+    color: #1f2d28; 
+}
+
+#timer {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: none;
+}
+
+#timer-text {
+    margin-bottom: 5px;
+}
+
+#timer-countdown {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* Sleep Information Boxes styles */
+.sleep-info {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    position: absolute;
+    top: calc(30% + 100px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 800px;
+    margin-top: 20px; 
+    z-index: 0; 
+}
+
+.sleep-info .previous-month,
+.sleep-info .current-night {
+    width: calc(50% - 20px);
+    max-width: 350px;
+    padding: 20px;
+    background-color: #1f2d28;
+    border: 2px solid #a3d1ae;
+    border-radius: 10px;
+    text-align: center;
+    color: #a3d1ae;
+    margin-top: 25px;
+}
+
+.sleep-info .previous-month {
+    margin-bottom: 50px;
+}
+
+.sleep-info .sleep-info-details {
+    margin-top: 20px;
+}
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 600px) {
+    .sleep-info {
+        flex-direction: column;
+        top: calc(30% + 100px);
+    }
+
+    .sleep-info .previous-month,
+    .sleep-info .current-night, .sleep-info {
+        width: calc(100% - 40px);
+    }
+
+    #bottom-navbar{
+        height: 40px;
+    }
 }
