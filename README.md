@@ -1,16 +1,17 @@
 
+Begin application with login.html
 
 Login
--enter in user and password and press login to continue to home page
+-enter in dummy user and password and press login to continue to home page
 
 Create Account/
 -enter in required information, click button to proceed
 -enter in more profile information, click finish to proceed
 
-Navigation.
+Navigation - move through the app (bottom of screen)
   -navigate through the application using the navigation bar that appears at the bottom of the page
 
-Sleep Tracking (home)
+Sleep Tracking -Track your sleep (home icon)
 Click a button and time your sleep.
 -click the start sleep tracking button,
 -click the stop button if you want to stop it
