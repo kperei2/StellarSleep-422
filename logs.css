@@ -165,8 +165,7 @@ hr.solid {
     right: 20px;
     width: 40px;
     height: 40px;
-    border: 2px solid #a3d1ae;
-    border-radius: 50%; 
+  
     background-color: #1f2d28;
     display: flex;
     justify-content: center;
