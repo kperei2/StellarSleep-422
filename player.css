@@ -59,7 +59,7 @@ body{
 
 .top-bar span{
   font-size: 18px;
-  margin-left: -3px;
+  margin-right: 115px;
   color:#89b683;
   font-weight: bold;
   margin-bottom: 100px;
@@ -211,6 +211,68 @@ body{
 
 
 #bottom-navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 7%;
+  right: 0px;
+  background-color: #9dcfa4;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+}
+
+.nav-item {
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  flex-grow: 1;
+  padding: 27px;
+  transition: background-color 0.3s;
+      
+}
+
+.active {
+  background-color: #89b683;
+      
+}
+
+#bottom-navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 7%;
+  left:0%;
+  background-color: #1f2d28;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+}
+
+.nav-item {
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  flex-grow: 1;
+  padding: 17px;
+  transition: background-color 0.3s;
+      
+}
+
+.active {
+  background-color: #89b683;
+      
+}
+
+#bottom-navbar {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -231,6 +293,78 @@ body{
 
 .nav-item.active {
   color: #fff;
+}
+
+.page-content {
+  padding-bottom: 0px;
+}
+
+/* Profile Icon */
+.profile-icon {
+  margin-top: 12px;
+  position: absolute;
+  top: 21px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: #1f2d28;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1; 
+}
+
+.profile-icon i {
+  color: #a3d1ae;
+  font-size: 24px;
+}
+
+/* Dropdown Content for Profile Icon */
+.profile-icon .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #9dcfa4;
+  min-width: 120px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  right: 0;
+  top: 60px; 
+}
+
+.profile-icon .dropdown-content a {
+  color: white; 
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 10px; 
+}
+
+.profile-icon .dropdown-content a:hover {
+  background-color: #7ba683; 
+}
+
+.profile-icon.active .dropdown-content {
+  display: block;
+}
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 600px) {
+  .sleep-info {
+      flex-direction: column;
+      top: calc(30% + 100px);
+  }
+
+  .sleep-info .previous-month,
+  .sleep-info .current-night, .sleep-info {
+      width: calc(100% - 40px);
+  }
+
+  #bottom-navbar{
+      height: 40px;
+  }
 }
 
 .page-content {
