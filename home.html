@@ -89,11 +89,13 @@
             profileOption.addEventListener('click', function(event) {
                 event.preventDefault();
                 console.log("Profile option clicked");
+                window.location(window.location.href = "profileinfo.html")
             });
 
             logoutOption.addEventListener('click', function(event) {
                 event.preventDefault();
                 console.log("Logout option clicked");
+                window.location(window.location.href = "logout.html")
             });
 
             const sleepTrackingCircle = document.getElementById('sleep-tracking-circle');
