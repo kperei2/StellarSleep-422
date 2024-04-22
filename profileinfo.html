@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="profileinfo.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <form id="createInfo" action="">
+            <h1>Change Information</h1>
+            <div class="input-box">
+                <input type="text" id="fn" placeholder="First Name" required>
+            </div>
+            <div class="input-box">
+                <input type="text" id="ln" placeholder="Last Name" required>
+            </div>
+            <div class="input-box">
+                <input type="text" id="age" placeholder="Age" required>
+            </div>
+            <div class="input-box">
+                <input type="text" id="gender" placeholder="Gender" required>
+            </div>
+            <div class="input-box">
+                <input type="text" id="avg" placeholder="Average Hours of Sleep" required>
+            </div>
+            
+            <button type="submit" class="btn">Save</button>
+        </form>
+
+        <script>
+            document.getElementById("createInfo").addEventListener("submit", function(event) {
+                // Prevent the form from being submitted
+                event.preventDefault();
+    
+                // Retrieve form inputs
+                var firstname = document.getElementById("fn").value;
+                var lastname = document.getElementById("ln").value;
+                var age = document.getElementById("age").value;
+                var gender = document.getElementById("gender").value;
+                var avghours = document.getElementById("avg").value;
+    
+                // Check if any field is empty
+                if (firstname.trim() === "" || lastname.trim() === "" || age.trim() === "" || gender.trim() === "" || avghours.trim() === "") {
+                    alert("Please fill in all fields.");
+                    return;
+                }
+                // If all validations pass, redirect to the next page
+                window.location.href = "home.html";
+            });
+        </script>
+    </div>    
+</body>
+</html>
