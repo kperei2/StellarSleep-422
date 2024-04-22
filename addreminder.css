@@ -41,6 +41,37 @@ body {
 
 
 #bottom-navbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 7%;
+    left:0%;
+    background-color: #1f2d28;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav-item {
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+    flex-grow: 1;
+    padding: 17px;
+    transition: background-color 0.3s;
+        
+}
+
+.active {
+    background-color: #89b683;
+        
+}
+
+#bottom-navbar {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -67,7 +98,6 @@ body {
     padding-bottom: 0px;
 }
 
-
 /* Profile Icon */
 .profile-icon {
     position: absolute;
@@ -75,8 +105,6 @@ body {
     right: 20px;
     width: 40px;
     height: 40px;
-    border: 2px solid #a3d1ae;
-    border-radius: 50%; 
     background-color: #1f2d28; 
     display: flex;
     justify-content: center;
@@ -118,6 +146,24 @@ body {
 .profile-icon.active .dropdown-content {
     display: block;
 }
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 600px) {
+    .sleep-info {
+        flex-direction: column;
+        top: calc(30% + 100px);
+    }
+
+    .sleep-info .previous-month,
+    .sleep-info .current-night, .sleep-info {
+        width: calc(100% - 40px);
+    }
+
+    #bottom-navbar{
+        height: 40px;
+    }
+}
+
 
 
 input[type=time] {  
